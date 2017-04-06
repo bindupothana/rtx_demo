@@ -1,32 +1,44 @@
-<div>
-<h3><div class="well">Employee Registrtion</div></h3>
-<p/><td/><tr/><br/>Company:<input type="text" />
-<td/><tr/>Location:<input type="text" name="">
-
-<p/><td/><tr/><p>FirstName: <input type="text" id= "userFirstName" name= "userFirstName"  ng-model="userFirstName"   required />
-<td/><tr/>LastName: <input type="text" id= "userLastName" name= "userLastName"  ng-model="userLastName"   required />
-<td/><tr/>Suffix: <input type="text" id= "userLastName" name= "userLastName"  ng-model="userLastName"   required /></p>
-Adress 1:
+<form>
+<h2><div class=" well">Employee Registrtion</div></h2>
 <div class="well">
-<p/><br/>D.no:<input type="text" />
-
-
-<p/><br/>City:<input type="text" />
-
-<p/><br/>State:<input type="text" />
-
-</div>
-
-Adress 2:
+<p/><td/><tr/><br/>Company:
+<input type="text"  ng-model="Company"   required/>
+<td/><tr/>Location:
+<input type="text" name="" id="" ng-model="Location"   required/></div>
 <div class="well">
-<p/><br/>D.no:<input type="text" />
+<p/><td/><tr/><p>FirstName: 
+<input type="text" id= "userFirstName" name= "userFirstName"  ng-model="userFirstName"   required />
+<td/><tr/>LastName: 
+<input type="text" id= "userLastName" "  ng-model="userLastName"   required />
+<td/><tr/>Suffix: 
+<input type="text" id= "userLastName"   ng-model="userLastName"   required /></p></div>
+<div class="well"><h2/>Adress 1:
+<p/><br/>Zip:
+<input type="text" id="zipcode"  ng-model="zipcode"   required/>
+<p/><br/>City:
+<input type="text" id="city" ng-model="city"   required/>
+<p/><br/>State:<input type="text" id="state" ng-model="state"   required/>
+</div><div class="well"><h2/>Adress 2:
+<p/><br/>Zip:
+<input type="text" id="zipcode"  ng-model="zipcode"   required/>
+<p/><br/>City:
+<input type="text" id="city"  ng-model="city"   required/>
+<p/><br/>State:
+<input type="text" id="state"  ng-model="state"   required/></div>
+<div class="well">
+<p/><br/>Enter Email Address:
+<input type="text" id="emailAddress"   ng-model="emailAddress"   required/></div>
+<div class="well"><p/><br/>DOB:
+<input type="text" id="dateOfBirth"  ng-model="dateOfBirth"   required /></div>
+<div class="col-md-4 center-block"></div>  
+<button class="btn btn-info btn-lg pull-center"  type="submit" ng-click="getAnswers()">Submit</button>
+</form>
 
 
-<p/><br/>City:<input type="text" />
 
-<p/><br/>State:<input type="text" />
 
-</div>
-</div>
+
+
+   
 
 
