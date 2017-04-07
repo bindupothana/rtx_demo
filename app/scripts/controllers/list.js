@@ -10,12 +10,12 @@
       $scope.getQuestion=function(){
      	questionFactory.getquestionFactory().then(function(data){
      	$scope.questions = data;
-     	console.log("$scope.question", $scope.questions)
+     	console.log("llll", $scope.questions)
        });
       }
         
      	$scope.getQuestion(); 
-     	 
+     	
 
    
 
