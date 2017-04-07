@@ -12,7 +12,7 @@
 <input type="text" id= "userLastName" "  ng-model="userLastName"   required />
 <td/><tr/>Suffix: 
 <input type="text" id= "userLastName"   ng-model="userLastName"   required /></p></div>
-<div class="well"><h2/>Adress 1:
+<p><div class="well"><h2/>Adress 1:
 <p/><br/>Zip:
 <input type="text" id="zipcode"  ng-model="zipcode"   required/>
 <p/><br/>City:
@@ -25,13 +25,25 @@
 <input type="text" id="city"  ng-model="city"   required/>
 <p/><br/>State:
 <input type="text" id="state"  ng-model="state"   required/></div>
-<div class="well">
+<div class="well"></p>
 <p/><br/>Enter Email Address:
 <input type="text" id="emailAddress"   ng-model="emailAddress"   required/></div>
 <div class="well"><p/><br/>DOB:
 <input type="text" id="dateOfBirth"  ng-model="dateOfBirth"   required /></div>
-<div class="col-md-4 center-block"></div>  
-<button class="btn btn-info btn-lg pull-center"  type="submit" ng-click="getAnswers()">Submit</button>
+
+
+
+ <div ng-repeat="(key, question) in questions">
+ <strong class="question">{{ question }}</strong>
+ <li ng-repeat="(inner_key, option) in question.options">
+  <input type="radio" data-ng-model="ques_info[i].answer[index]"  ng-class= "ques_info[i].answer_{{answer.selected}}"  
+            name="ques_info[i]_{{$parent.$index}}option"  value="{{options}}" ng-click="selectedAnswerForQues(key, inner_key)"/> <label>{{option}}</label></li>
+            </div>
+
+
+<div><br/><p/><div class="col-md-4 center-block"></div>  
+<button class="btn btn-info btn-lg pull-center"  type="submit" ng-click="submitNewEmployee()">Submit</button>
+</div>
 </form>
 
 

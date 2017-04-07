@@ -1,0 +1,35 @@
+[{
+
+"Question":"Hve you ever worked before this company?",
+"options":["Yes","No"]
+}, 
+{
+"Question":"Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?" ,
+"options":["Yes","No"]
+},
+{
+"Question":"Have you or has anyone living with you received food Stamps (SNAP)at any time during the past 15 months?",
+"options":["Yes","No"]
+}, 
+{
+
+"Question":"Have you received Supplement Security Income(SSI)at any time within the past 3 months?",
+"options":["Yes","No"]
+},
+{
+"Question":"Have you received any type of vocational rehabitation services within  the past two year?",
+"options":["Yes","No"]
+},
+{
+"Question":"Have you been unemployeed at any time during the last 12 months?",
+"options":["Yes","No"]
+},
+ 
+{
+"Question":"Convicted of felony or released from prison in last 12 months?",
+"options":["Yes","No"]
+},
+{
+"Question":"Are you or your spouse a member of a Native American Tribe?",
+"options":["Yes","No"] 
+}]

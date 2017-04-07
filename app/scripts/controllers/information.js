@@ -8,7 +8,9 @@
     $scope.employeelist=function(){  	
        $state.go("list");
     };
-
+   $scope.go_to_new_emp=function(){
+    $state.go("newemployee");
+    };
 
    
 

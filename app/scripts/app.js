@@ -23,7 +23,7 @@
   ])
   rtxDemoApp.config(['$stateProvider', '$urlRouterProvider', '$httpProvider',function ($stateProvider,$urlRouterProvider,$httpProvider)
    {
-    $httpProvider.defaults.useXDomain = true;
+    // $httpProvider.defaults.useXDomain = true;
     $urlRouterProvider.otherwise('/login')
     $stateProvider 
     .state('login', {
@@ -36,20 +36,22 @@
         templateUrl: 'views/empinfo.html',
         controller: 'regCtrl'
     })
-   .state('newemployee', {
-        url : '/newemployee', 
-        templateUrl: 'views/newemployee.html',
-        controller: 'regCtrl'  
-    })   
+     
    .state('list', {
         url : '/list', 
         templateUrl: 'views/list.html',
         controller: 'regCtrl'  
     }) 
-   .state('go_to_new_emp', {
-        url : '/go_to_new_emp', 
-        templateUrl: 'views/go_to_new_emp.html',
+   .state('newemployee', {
+        url : '/newemployee', 
+        templateUrl: 'views/newemployee.html',
         controller: 'listCtrl'  
     }) 
+    //  .state('question', {
+    //     url : '/question', 
+    //     templateUrl: 'views/question.html',
+    //     controller: 'questionCtrl'  
+    // })     
+   
 
   }]);
