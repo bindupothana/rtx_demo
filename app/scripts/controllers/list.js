@@ -9,7 +9,13 @@
 
       $scope.getQuestion=function(){
      	questionFactory.getquestionFactory().then(function(data){
+        var value={};
+        if(value==0){
+          
+
+        }
      	$scope.questions = data;
+
      	console.log("llll", $scope.questions)
        });
       }

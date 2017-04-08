@@ -4,47 +4,79 @@ Employee Registrtion</div></h2>
 <div class="well">
 <h5>Employee Basic Information:</h5>
 <td>
-<p/><td/><tr/><br/>Company:
+<label for="Company"> Company: </label>
 <input type="text"  ng-model="user.Company"   required/>
-<td/><tr/>Location:
+<label for="Location"> Location: </label>
 <input type="text" name="" id="" ng-model="Location"   required/>
-<p/><td/><tr/><p>FirstName: 
-<input type="text" id= "userFirstName" name= "userFirstName"  ng-model="user.FirstName"   required />
-<td/><tr/>LastName: 
+<br/><p/><label for="FirstName"> FirstName: </label>
+<input type="text"  id= "userFirstName" name= "userFirstName"  ng-model="user.FirstName"   required />
+<br/></p>LastName: 
 <input type="text" id= "userLastName" "  ng-model="user.LastName"   required />
-<td/><tr/>Suffix: 
+<p/><br/>Suffix: 
 <input type="text" id= "userLastName"   ng-model="user.suffix"   required /></p>
 <td/><tr/>Address: 
-<input type="text" size="30" >
-<td/><tr/>Address:
-<input type="text" size="30" >
-<p/><br/><td/><tr/>Zip:
+<input type="text" >
+
+<p/><br/>Zip:
+<input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
+<p/><br/>City:
+<input type="text" id="city"  ng-model="user.city"   required/>
+<p/><br/>State:
+<input type="state" id="state"  ng-model="user.state"   required/>
+</p><br />DOB:
+<input type="date" id="dob" ng-model="user.dob" /> 
+</td>
+</div>
+<div class="well">
+
+ 
+
+  <ol type="1">
+  <div  class ="well" id={{question.question}} ng-repeat=" question in questions" value={{question}} name="question">
+   <strong class="question">{{question.Question1}}</strong>
+   <div>
+   <strong class="question">{{question.Question2}}</strong>
+   <div ng-model="yes"></div>
+   </div>
+
+
+
+    <strong class="question">{{question.Question3}}</strong>
+    <strong class="question">{{question.Question4}}</strong>
+    <strong class="question">{{question.Question5}}</strong>
+    <strong class="question">{{question.Question6}}</strong>
+    <strong class="question">{{question.Question7}}</strong>
+    <strong class="question">{{question.Question8}}</strong>
+
+
+
+
+   <!-- Recipient Name:<input type="text" name="">
+   <p/><br/><td/><tr/>Zip:
 <input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
 <td/><tr/>City:
 <input type="text" id="city"  ng-model="user.city"   required/>
 <td/><tr/>State:
 <input type="state" id="state"  ng-model="user.state"   required/>
-</p><br />DOB:
-<input type="date" id="dob" ng-model="user.dob" /> 
-<td/>
-</div>
- 
-
-  <ol type="1">
-  <div  class ="well" id={{question.question}} ng-repeat=" question in questions" value={{question}} name="question">
-   <strong class="question">{{question.Question}}</strong>
+</div> -->
   <ol type="1">
   <li ng-repeat="(inner_key, option) in question.options">
 
-  <input type="radio" data-ng-model="ques_info[i].answer[index]"  ng-class= "ques_info[i].answer_{{answer.selected}}"  
+  <input type="radio" data-ng-model="ques_info[i].answer[index]"    
             name="ques_info[i]_{{$parent.$index}}_answer"  value="{{options}}" ng-click="selectedAnswerForQues(key, inner_key)"/> 
-            <a data-toggle="collapse"  role="progressbar"  data-parent="#accordion" href="#{{yes}}" value="0"><label>{{option}}</label></a>
+            <a data-toggle="collapse"  role="progressbar"   value="0"><label>{{option}}</label></a>
         </li>
        </ol>
       </div>
     </ol>
     
 
+
+
+
+
+
+</div>
 <div layout="row" class="custom-ques-field">
 <div><br/><p/><div class="col-md-4 center-block"></div>  
 <button class="btn btn-info btn-lg pull-center"  type="submit" ng-click="submitNewEmployee()">Submit</button>
