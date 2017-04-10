@@ -51,4 +51,37 @@ app.service('loginService', ['$http',function($http) {
 
    }
 
+
+return{
+      postName:function(credentials) {
+      console.log('call http with object', credentials);
+      return  $http({
+                method: 'POST',
+                url: 'https://api-qa.retrotax-aci.com/employees',
+                data: credentials,
+                headers: { "Content-Type": "application/json" },
+                responseType: 'json'
+              });
+      //    .success(function(data){
+      //    if(result==200){
+      //       result=(data);
+      //      }
+
+      //     })
+      //   .error(function(){
+      //     alert("wrong");
+
+
+      // });
+             // return result;
+          }
+
+
+   }
+
+
+
+
+
+
 }]);

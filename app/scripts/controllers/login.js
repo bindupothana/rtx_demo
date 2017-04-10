@@ -10,8 +10,8 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',func
 	//     }
 	//     loginService.postName(obj).then(function(data){
 	//     	console.log(data);
-	    	// data=$.parseJSON(JSON.parse(data));
-	    	// $scope.message=data;
+	//     	data=$.parseJSON(JSON.parse(data));
+	//     	$scope.message=data;
 	//     	$state.go("empinfo");
 	//     }, function(error){
 	//     	console.log(error);

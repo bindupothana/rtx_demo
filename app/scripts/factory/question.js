@@ -10,28 +10,28 @@ app.factory('questionFactory', function($q, questionService) {
 
 
 
-        for(var i=0; i< resp.data.length; i++){
-          console.log(resp.data[i].Yes)    
-          var roleMap = isExistKey(yesMap, resp.data[i].Yes);
-          if(roleMap){
-       var roleList = isExistKey(roleMap, resp.data[i].role);
-       if(roleList){
-         roleList.push(resp.data[i]);
-       }else{
-         roleList = [];
-         roleList.push(resp.data[i]);
-       }
+   //      for(var i=0; i< resp.data.length; i++){
+   //        console.log(resp.data[i].Yes)    
+   //        var roleMap = isExistKey(yesMap, resp.data[i].Yes);
+   //        if(roleMap){
+   //     var roleList = isExistKey(roleMap, resp.data[i].role);
+   //     if(roleList){
+   //       roleList.push(resp.data[i]);
+   //     }else{
+   //       roleList = [];
+   //       roleList.push(resp.data[i]);
+   //     }
               
-       roleMap[resp.data[i].role] = roleList;
-              schoolNameMap[resp.data[i].school_name] = roleMap;
-          } else{
-              var roleList = [];
-              roleList.push(resp.data[i]);
-       var roleMap = {};
-       roleMap[resp.data[i].role] = roleList;
-              schoolNameMap[resp.data[i].school_name] = roleMap;
-          }
-   }
+   //     roleMap[resp.data[i].role] = roleList;
+   //            schoolNameMap[resp.data[i].school_name] = roleMap;
+   //        } else{
+   //            var roleList = [];
+   //            roleList.push(resp.data[i]);
+   //     var roleMap = {};
+   //     roleMap[resp.data[i].role] = roleList;
+   //            schoolNameMap[resp.data[i].school_name] = roleMap;
+   //        }
+   // }
        deferred.resolve(resp.data);
      },
        function(errorInfo) {
