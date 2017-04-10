@@ -27,45 +27,26 @@ Employee Registrtion</div></h2>
 <input type="date" id="dob" ng-model="user.dob" /> 
 </td>
 </div>
-<div class="well">
-
- 
-
-  <ol type="1">
-  <div  class ="well" id={{question.question}} ng-repeat=" question in questions" value={{question}} name="question">
-   <strong class="question">{{question.Question1}}</strong>
-   <div>
-   <strong class="question">{{question.Question2}}</strong>
-<!--    <div ng-model="yes"></div>
- -->   </div>
 
 
 
-    <!-- <strong class="question">{{question.Question3}}</strong>
-    <strong class="question">{{question.Question4}}</strong>
-    <strong class="question">{{question.Question5}}</strong>
-    <strong class="question">{{question.Question6}}</strong>
-    <strong class="question">{{question.Question7}}</strong>
-    <strong class="question">{{question.Question8}}</strong> -->
+<div class="well"> 
+<ol type="1">
+<div  class ="well" id={{question.Question}} ng-repeat=" (index,question) in questions" value={{question}} name="question">
+<strong class="question">{{question.Question}}</strong>
 
-
-
-
-   <!-- Recipient Name:<input type="text" name="">
-   <p/><br/><td/><tr/>Zip:
+ <ol type="1">
+ <li ng-repeat=" option in question.options"> 
+ <input type="radio" ng-check="questions[index].selected"  id="{{option}}" ng-click= "questions[index].selected = (option=='Yes' ? true : false) "/>{{option}} </li>
+  <span ng-show="questions[index].selected">
+ <!--  <p/><br/><td/><tr/>Recipient Name:<input type="text" name="">
+<p/><br/><td/><tr/>Zip:
 <input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
 <td/><tr/>City:
 <input type="text" id="city"  ng-model="user.city"   required/>
 <td/><tr/>State:
-<input type="state" id="state"  ng-model="user.state"   required/>
-</div> -->
-  <ol type="1">
-  <li ng-repeat="(inner_key, option) in question.options">
-
-  <input type="radio" data-ng-model="ques_info[i].answer[index]"    
-            name="ques_info[i]_{{$parent.$index}}_answer"  value="{{options}}" ng-click="selectedAnswerForQues(key, inner_key)"/> 
-            <a data-toggle="collapse"  role="progressbar"   value="0"><label>{{option}}</label></a>
-        </li>
+<input type="state" id="state"  ng-model="user.state"   required/ -->>hsfjkl
+</div> </span>
        </ol>
       </div>
     </ol>
