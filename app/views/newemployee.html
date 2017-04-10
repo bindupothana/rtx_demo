@@ -2,16 +2,15 @@
 <h2><div class=" well">
 Employee Registrtion</div></h2>
 <div class="well">
-<!-- <h5>Employee Basic Information:</h5> -->
 <td>
-<label for="Company"> Company: </label>
-<input type="text"  ng-model="user.Company"   required/>
-<label for="Location"> Location: </label>
-<input type="text" name="" id="" ng-model="Location"   required/>
-<br/><p/><label for="FirstName"> FirstName: </label>
-<input type="text"  id= "userFirstName" name= "userFirstName"  ng-model="user.FirstName"   required />
-<br/></p>LastName: 
-<input type="text" id= "userLastName" "  ng-model="user.LastName"   required />
+<tr><label for="Company"> Company: </label>
+<input type="text"  ng-model="user.Company"   required/><tr/>
+<tr><label for="Location"> Location: </label>
+<input type="text" name="" id="" ng-model="Location"   required/><tr/>
+<tr><label for="FirstName"> FirstName: </label>
+<input type="text"  id= "userFirstName" name= "userFirstName"  ng-model="user.FirstName"   required /></tr>
+<tr>LastName: 
+<input type="text" id= "userLastName" "  ng-model="user.LastName"   required /></tr>
 <p/><br/>Suffix: 
 <input type="text" id= "userLastName"   ng-model="user.suffix"   required /></p>
 <br/><p/>Address: 
@@ -33,19 +32,38 @@ Employee Registrtion</div></h2>
 <div class="well"> 
 <ol type="1">
 <div  class ="well" id={{question.Question}} ng-repeat=" (index,question) in questions" value={{question}} name="question">
-<strong class="question">{{question.Question}}</strong>
+<strong class="question">{{question.Question1}}</strong>
 
  <ol type="1">
  <li ng-repeat=" option in question.options"> 
  <input type="radio" ng-check="questions[index].selected"  id="{{option}}" ng-click= "questions[index].selected = (option=='Yes' ? true : false) "/>{{option}} </li>
-  <span ng-show="questions[index].selected">
+  <span ng-show="questions[index].selected">{{question.option}}
+
+<p/><br/><td/><tr/>Recipient Name:<input type="text" name="">
+<p/><br/><td/><tr/>Zip:
+<input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
+<p/><br/><td/><tr/>City:
+<input type="text" id="city"  ng-model="user.city"   required/>
+<p/><br/><td/><tr/>State:
+<input type="state" id="state"  ng-model="user.state"   required/ 
+
+
+
+<strong class="question">{{question.Question2}}</strong>
+ <!-- <ol type="1">
+ <li ng-repeat=" option in question.options"> 
+ <input type="radio" ng-check="questions[index].selected"  id="{{option}}" ng-click= "questions[index].selected = (option=='Yes' ? true : false) "/>{{option}} </li>
+  <span ng-show="questions[index].selected">{{question.option}} -->
  <!--  <p/><br/><td/><tr/>Recipient Name:<input type="text" name="">
 <p/><br/><td/><tr/>Zip:
 <input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
 <td/><tr/>City:
 <input type="text" id="city"  ng-model="user.city"   required/>
 <td/><tr/>State:
-<input type="state" id="state"  ng-model="user.state"   required/ -->>hsfjkl
+<input type="state" id="state"  ng-model="user.state"   required/ -->
+
+
+
 </div> </span>
        </ol>
       </div>

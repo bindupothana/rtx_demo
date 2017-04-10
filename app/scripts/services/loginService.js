@@ -2,25 +2,7 @@ var app = angular.module('rtxDemoApp');
 
 app.service('loginService', ['$http',function($http) {
 
-  
-   // this.postName=function(credentials){
-   // 	var result=$http.post('https://api-qa.retrotax-aci.com/authentication', credentials)
-   // 	.success(function(data){
-   //       if(result==200){
-   // 		result=(data);
-   //    }
-
-   // 	})
-   // 	.error(function(){
-   // 		alert("wrong");
-
-   // 	});
-   // 	return result;
-   // }
-
-   //  this.getNewEmployee=function(){
-   // 	var newEmp=$http.get('api-qa.retrotax-aci.com/authentication')
-   // }
+ 
    
 
 
@@ -31,57 +13,32 @@ app.service('loginService', ['$http',function($http) {
                 method: 'POST',
                 url: 'https://api-qa.retrotax-aci.com/authentication',
                 data: credentials,
-                headers: { "Content-Type": "application/json" },
+                headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "Content-Type": "application/json"},
                 responseType: 'json'
               });
-      //    .success(function(data){
-      //    if(result==200){
-      //       result=(data);
-      //      }
-
-      //     })
-      //   .error(function(){
-      //     alert("wrong");
-
-
-      // });
-             // return result;
           }
-
-
    }
 
 
-return{
-      postName:function(credentials) {
-      console.log('call http with object', credentials);
-      return  $http({
-                method: 'POST',
-                url: 'https://api-qa.retrotax-aci.com/employees',
-                data: credentials,
-                headers: { "Content-Type": "application/json" },
-                responseType: 'json'
-              });
-      //    .success(function(data){
-      //    if(result==200){
-      //       result=(data);
-      //      }
-
-      //     })
-      //   .error(function(){
-      //     alert("wrong");
-
-
-      // });
-             // return result;
-          }
-
-
-   }
+ // return{
+ //      postName:function(credentials) {
+ //      console.log('call http with object', credentials);
+ //      return  $http({
+ //                method: 'POST',
+ //                url: 'https://api-qa.retrotax-aci.com/authentication',
+ //                data: credentials,
+ //                headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "Content-Type": "application/json"},
+ //                responseType: 'json'
+ //              });
+ //          }
+ //   }
 
 
 
-
-
-
+   
 }]);
+
+
+
+
+

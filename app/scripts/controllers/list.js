@@ -6,7 +6,6 @@
      $state.go("list");
      };
     
-
       $scope.getQuestion=function(){
      	questionFactory.getquestionFactory().then(function(data){
       

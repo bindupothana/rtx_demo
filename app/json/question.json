@@ -1,9 +1,11 @@
 [{
 
 "Question1":"Have you ever worked before this company?",
-"option1":["Yes","No"]
-
-}, 
+"options":["Yes","No"]
+},
+{
+"Question2":["Recipient Name:","City:","State:"]
+},
 {
 "Question":"Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?" ,
 "options":["Yes","No"],
