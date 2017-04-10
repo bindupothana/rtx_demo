@@ -19,11 +19,11 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',func
                           $scope.validationError = true;   
 	 	  	                   })   
 	 	  	                    };
-   $scope.list_of_states=function(){
-   loginService.stateName().then(function(data){     
-   var data =$.parseJSON(JSON.parse(data));
-    $scope.StateList=data;
-      })
-   };
+   // $scope.list_of_states=function(){
+   // loginService.stateName().then(function(data){     
+   // var data =$.parseJSON(JSON.parse(data));
+   //  $scope.StateList=data;
+   //    })
+   // };
 
 }]);
