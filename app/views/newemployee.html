@@ -7,22 +7,33 @@ Employee Registrtion</div></h2>
 <input type="text"  ng-model="user.Company"   required/><tr/>
 <tr><label for="Location"> Location: </label>
 <input type="text" name="" id="" ng-model="Location"   required/><tr/>
-<tr><label for="FirstName"> FirstName: </label>
+
+<br>
+<tr><br/><p/><label for="FirstName"> FirstName: </label>
 <input type="text"  id= "userFirstName" name= "userFirstName"  ng-model="user.FirstName"   required /></tr>
 <tr>LastName: 
 <input type="text" id= "userLastName" "  ng-model="user.LastName"   required /></tr>
-<p/><br/>Suffix: 
+<label for="Suffix"> Suffix: </label> 
 <input type="text" id= "userLastName"   ng-model="user.suffix"   required /></p>
-<br/><p/>Address: 
-<input type="text" >
 
-<p/><br/>Zip:
-<input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
-<p/><br/>City:
+<br>
+<tr><label for="Address"> Address: </label>
+<input type="text" >
+<tr><label for="Address"> Address: </label>
+<input type="text" >
+</br>
+
+<br>
+<tr><label for="zipcode">   Zip: </label>
+<input type="search" id="zipcode"  ng-model="user.zipcode"   required/>
+<tr><label for="city"> city: </label>
 <input type="text" id="city"  ng-model="user.city"   required/>
-<p/><br/>State:
-<input type="state" id="state"  ng-model="user.state"   required/>
-</p><br />DOB:
+<tr><label for="state"> State: </label>
+<input type="state" id="state"  ng-model="list_of_states"   required/>
+
+<br>
+<tr><p/><label for="ssn"> SSN: </label><input type="text" >
+<tr><label for="date of birth"> DOB: </label>
 <input type="date" id="dob" ng-model="user.dob" /> 
 </td>
 </div>
@@ -50,18 +61,7 @@ Employee Registrtion</div></h2>
 
 
 <strong class="question">{{question.Question2}}</strong>
- <!-- <ol type="1">
- <li ng-repeat=" option in question.options"> 
- <input type="radio" ng-check="questions[index].selected"  id="{{option}}" ng-click= "questions[index].selected = (option=='Yes' ? true : false) "/>{{option}} </li>
-  <span ng-show="questions[index].selected">{{question.option}} -->
- <!--  <p/><br/><td/><tr/>Recipient Name:<input type="text" name="">
-<p/><br/><td/><tr/>Zip:
-<input type="text" id="zipcode"  ng-model="user.zipcode"   required/>
-<td/><tr/>City:
-<input type="text" id="city"  ng-model="user.city"   required/>
-<td/><tr/>State:
-<input type="state" id="state"  ng-model="user.state"   required/ -->
-
+ 
 
 
 </div> </span>

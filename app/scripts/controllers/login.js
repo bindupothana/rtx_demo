@@ -2,8 +2,7 @@
 var app = angular.module('rtxDemoApp');
 app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',function($scope,$stateParams,loginService,$state) {
 	$scope.submit=function(user){
-    // 	$state.go("empinfo");
-    // };
+    
 	 var obj={            
 	 	'username':user.userName,            
 	 	'password':user.password  
@@ -20,4 +19,11 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',func
                           $scope.validationError = true;   
 	 	  	                   })   
 	 	  	                    };
-	 	  	                }]);
+   $scope.list_of_states=function(){
+   loginService.stateName().then(function(data){     
+   var data =$.parseJSON(JSON.parse(data));
+    $scope.StateList=data;
+      })
+   };
+
+}]);
