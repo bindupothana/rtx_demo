@@ -31,8 +31,7 @@ Employee Registrtion</div></h2>
 
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state"  ng-select="newRegister(user)"></select> 
-
+<select name="state" id="state" ng-model="user.states" ng-select="newRegister(user)"></select> 
 
 
 <br>
@@ -43,11 +42,21 @@ Employee Registrtion</div></h2>
 </div>
 
 
-
+<!-- 
 <div class="well"> 
 <ol type="1">
 <div  class ="well" id={{question.Question1}} ng-repeat=" (index,question) in questions" value={{question}} name="question">
 <strong class="question">{{question.Question1}}</strong>
+ -->
+
+<div class="well"> 
+<ol type="1">
+<div  class ="well" id="questions"    ng-repeat=" (index,question) in questions"  value={{question}} name="question">
+<!-- <input ng-model="Question1" ng-options="" style="width:350px;"></input> -->
+
+<strong class="question">{{question.Question1}}</strong>
+
+
 
  <ol type="1">
  <li ng-repeat=" option in question.options"> 
@@ -60,11 +69,11 @@ Employee Registrtion</div></h2>
 <p/><br/><td/><tr/>City:
 <input type="text" id="city"  ng-model="user.city"   required/>
 <p/><br/><td/><tr/>State:
-<input type="state" id="state"  ng-model="user.state"   required/ 
+<input type="state" id="state"  ng-model="user.state"   required/ >
 
 
 
-<strong class="question">{{question.Question2}}</strong>
+<!-- <strong class="question">{{question.Question2}}></strong> -->
  
 
 
