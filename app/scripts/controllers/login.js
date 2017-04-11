@@ -15,7 +15,7 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','stateService
              $scope.storeData.push(response.data);
               console.log("hi", $scope.storeData)
                $state.go("empinfo"); 
-              return localStorage.setItem('$scope.storeData', JSON.stringify($scope.storeData));         
+              return localStorage.setItem('user_info', JSON.stringify($scope.storeData));         
 	 	  	   }else {
 	 	  	   	        var data={};
 

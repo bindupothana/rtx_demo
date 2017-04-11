@@ -3,6 +3,13 @@ var app = angular.module('rtxDemoApp');
 app.service('stateService', ['$http',function($http) { 
  return{
       getStateName:function(states) {
+       //  var storeData=JSON.parse(localStorage.getItem('storeData'));
+        
+       // console.log("storedata",JSON.parse(localStorage.getItem('storeData')));
+   var user_info = JSON.parse(localStorage.getItem('user_info'));
+       console.log("service_user_info",user_info)
+        var auth_info = user_info.auth_token;
+        
       console.log('call http with object', states);
       return  $http({
                 method: 'GET',
@@ -19,9 +26,6 @@ app.service('stateService', ['$http',function($http) {
  
 
 }]);
-
-
-
 
 
 
