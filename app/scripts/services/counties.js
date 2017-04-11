@@ -1,4 +1,4 @@
-3var app = angular.module('rtxDemoApp');
+var app = angular.module('rtxDemoApp');
 
 app.service('countyService', ['$http',function($http) {   
   return{

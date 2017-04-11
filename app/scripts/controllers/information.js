@@ -7,20 +7,16 @@
       $scope.selectState =stateService.getStateName().then(function(response){
       console.log("hjkjl",response.data)
       $scope.stateList =response.data;      
-    })    
-  
-    $state.go("newemployee");
+      }) 
+      $state.go("newemployee");
     };
 
      
-    $scope.employeelist=function(res){
-        // console.log("lfg",res)
-  	
+    $scope.employeelist=function(res){     
        $state.go("list");
     };
-   $scope.go_to_new_emp=function(){
-            // console.log("lfg",$scope.go_to_new_emp)
 
+   $scope.go_to_new_emp=function(){      
     $state.go("newemployee");
     };
 

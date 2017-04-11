@@ -8,14 +8,7 @@
      };
     
    
-   //    $scope.getStates=function(){    
-   //    stateService.stateName().then(function(response){     
-   //    $scope.stateList =response.data;
-   //    console.log("aaaa",response.data)
-      
-      
-   //  });           
-   // }
+   
       
 
       $scope.getQuestion=function(){
@@ -28,15 +21,7 @@
 
 
 
-   //    $scope.getStates=function(){    
-   //    stateService.stateName().then(function(response){     
-   //    $scope.stateList =response.data;
-   //    console.log("aaaa",response.data)
-      
-      
-   //  });           
-   // }
-
+  
 
    
 
