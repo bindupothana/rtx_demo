@@ -47,11 +47,7 @@
         templateUrl: 'views/newemployee.html',
         controller: 'listCtrl'  
     }) 
-    //  .state('question', {
-    //     url : '/question', 
-    //     templateUrl: 'views/question.html',
-    //     controller: 'questionCtrl'  
-    // })     
+    
    
 
   }]);

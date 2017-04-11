@@ -1,14 +1,15 @@
 
 var app = angular.module('rtxDemoApp');
-app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',function($scope,$stateParams,loginService,$state) {
+app.controller('loginCtrl',['$scope','$stateParams','loginService','stateService','$state',function($scope,$stateParams,loginService,stateService,$state) {
 	$scope.submit=function(user){
+
     
 	 var obj={            
 	 	'username':user.userName,            
 	 	'password':user.password  
 	 	}     
 	 	  loginService.postName(obj).then(function(response){            
-	 	  	console.log(response);           
+	 	  	   
 	 	  	 if(response.status == 200){               
 	 	  	  $state.go("empinfo");           
 	 	  	   }else {
@@ -19,11 +20,16 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','$state',func
                           $scope.validationError = true;   
 	 	  	                   })   
 	 	  	                    };
-   // $scope.list_of_states=function(){
-   // loginService.stateName().then(function(data){     
-   // var data =$.parseJSON(JSON.parse(data));
-   //  $scope.StateList=data;
-   //    })
-   // };
+   
+
+    $scope.getStates=function(){
+    	console.log("hjkjl",$scope.getStates)	 
+    $scope.selectState =stateService.stateName(result).then(function(response){
+    	console.log("hjkjl",$scope.selectState)
+    	$scope.stateList =response.data;
+    	
+    })           
+   };	 
+
 
 }]);

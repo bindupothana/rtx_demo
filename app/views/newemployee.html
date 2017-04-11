@@ -27,9 +27,13 @@ Employee Registrtion</div></h2>
 <tr><label for="zipcode">   Zip: </label>
 <input type="search" id="zipcode"  ng-model="user.zipcode"   required/>
 <tr><label for="city"> city: </label>
-<input type="text" id="city"  ng-model="user.city"   required/>
+<select name="city" id="city"  ng-model="user.city"   required></select>
+
+
 <tr><label for="state"> State: </label>
-<input type="state" id="state"  ng-model="list_of_states"   required/>
+<select name="state" id="state" ng-model="user.states" ng-select="getStates"></select> {{getStates}}
+
+
 
 <br>
 <tr><p/><label for="ssn"> SSN: </label><input type="text" >
