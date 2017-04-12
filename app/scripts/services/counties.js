@@ -2,7 +2,7 @@ var app = angular.module('rtxDemoApp');
 
 app.service('countyService', ['$http',function($http) {   
   return{
-       county:function(counties) {
+       getCounty:function(counties) {
        console.log('call http with object', counties);
        return  $http({
                 method: 'GET',

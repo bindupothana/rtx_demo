@@ -1,6 +1,7 @@
 
 var app = angular.module('rtxDemoApp');
-app.controller('loginCtrl',['$scope','$stateParams','loginService','stateService','$state',function($scope,$stateParams,loginService,stateService,$state) {
+app.controller('loginCtrl',['$scope','loginService','$state',
+	function($scope,loginService,$state) {
 	$scope.submit=function(user){
 
     	 	 
@@ -13,7 +14,8 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','stateService
 	 	  	$scope.storeData =  JSON.parse(localStorage.getItem('$scope.storeData'));
              $scope.storeData = [];
              $scope.storeData.push(response.data);
-              console.log("hi", $scope.storeData)
+              console.log($state)
+               
                $state.go("empinfo"); 
               return localStorage.setItem('user_info', JSON.stringify($scope.storeData));         
 	 	  	   }else {
@@ -27,14 +29,7 @@ app.controller('loginCtrl',['$scope','$stateParams','loginService','stateService
 	 	  	                    };
    
 
-    $scope.getStates=function(){
-    	console.log("hjkjl",$scope.getStates)	 
-    $scope.selectState =stateService.stateName(result).then(function(response){
-    	console.log("hjkjl",$scope.selectState)
-    	$scope.stateList =response.data;
-    	
-    })           
-   };	 
+    
 
 
 }]);
