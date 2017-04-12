@@ -21,8 +21,16 @@
 
 
 
-  
+  $scope.getStateList=function(){
 
+     $scope.selectState =stateService.getStateName().then(function(response){
+      
+      $scope.stateList =response.data; 
+      console.log("states",response.data)     
+      }) 
+   }
+
+   $scope.getStateList();
    
 
 

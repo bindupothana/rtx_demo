@@ -27,11 +27,11 @@ Employee Registrtion</div></h2>
 <tr><label for="zipcode">   Zip: </label>
 <input type="search" id="zipcode"  ng-model="user.zipcode"   required/>
 <tr><label for="city"> city: </label>
-<select name="city" id="city"  ng-model="user.city"   required></select>
+<input name="city" id="city"  ng-model="user.city"   required></input>
 
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state" ng-model="user.response.data" ng-options="x.name for x in stateList"></select> 
+<select name="state" id="state" ng-model="user.response.data" ng-options="state.name for state in stateList"></select> 
 
 
 <br>
@@ -54,7 +54,7 @@ Employee Registrtion</div></h2>
 <div  class ="well" id="questions"    ng-repeat=" (index,question) in questions"  value={{question}} name="question">
 <!-- <input ng-model="Question1" ng-options="" style="width:350px;"></input> -->
 
-<strong class="question">{{question.Question1}}</strong>
+<strong class="question" ng-model="Question1">{{question.Question1}}</strong>
 
 
 
