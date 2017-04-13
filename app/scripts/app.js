@@ -40,14 +40,17 @@
    .state('list', {
         url : '/list', 
         templateUrl: 'views/list.html',
-        controller: 'regCtrl'  
+        controller: 'listCtrl'  
     }) 
    .state('newemployee', {
         url : '/newemployee', 
         templateUrl: 'views/newemployee.html',
         controller: 'listCtrl'  
     }) 
-    
-   
+    //  .state('list', {
+    //     url : '/newemployee', 
+    //     templateUrl: 'views/newemployee.html',
+    //     controller: 'listCtrl'  
+    // }) 
 
   }]);
