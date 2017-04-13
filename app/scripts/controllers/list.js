@@ -1,7 +1,7 @@
  var app = angular.module('rtxDemoApp');
   app.controller('listCtrl',['$scope','stateService','$state',
   	function($scope,stateService,$state) {
-       $scope.result = {};
+       $scope.employee.questionnaire.result = {};
        $scope.inner_question = {};
 
       $scope.employeeList = JSON.parse(localStorage.getItem('employeeList'));
