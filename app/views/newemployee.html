@@ -63,27 +63,28 @@ Employee Registrtion</div></h2>
 <span ng-show="result['1'] == 'no'">
 <div class="well">
 
+
 <div >1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
 <br/>
 <input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.afdc" ng-click= "validation_inner_questionaire(inner_question['1'])" />YES
 <input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.afdc" ng-click= "validation_inner_questionaire(inner_question['1'])"/>NO
 <span ng-show="inner_question['1'] == 'Yes'">
 <div class="well">
-<div class="well well-sm"> TANF Benefits Recipient Details</div>
+<div class="well well-sm" ng-model="employee.questionnaire.afdc_recipient_info"> TANF Benefits Recipient Details</div>
 
 <div>
 Recipient Name:
-<input type="text" id="name"  />
+<input type="text" id="name" ng-model="employee.questionnaire.afdc_recipient_info.name" />
 </div>
 
 <br/><p/><tr><label for="city"> city: </label>
-<input name="city" id="city"  ng-model="user.city"   required></input>
+<input name="city" id="city"  ng-model="employee.questionnaire.afdc_recipient_info.city_received"   required></input>
 
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state" ng-model="user.response.data" ng-options="state.name for state in stateList"></select> 
+<select name="state" id="state" ng-model="employee.questionnaire.afdc_recipient_info.state_received" ng-options="state.name for state in stateList"></select> 
 <tr><label for="county"> County: </label>
-<select name="county" id="county" ng-model="user.response.data" ng-options="county.name for state in stateList"></select> 
+<select name="county" id="county" ng-model="employee.questionnaire.afdc_recipient_info.county_received" ng-options="county.name for state in stateList"></select> 
 </div>
 
 </span>
@@ -94,18 +95,19 @@ Recipient Name:
 <input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.food_stamps" ng-click= "questionaire(result['1'])" />YES
 <input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.food_stamps" ng-click= "questionaire(result['3'])"/> NO
 <span ng-show="result['3'] == 'Yes'"><div class="well">
-<div class="well well-sm"> SNAP Benefits Recipient Details</div>
+<div class="well well-sm" ng-model="employee.questionnaire.foodstamps_recipient_info"> SNAP Benefits Recipient Details</div>
 
-<br><tr/><p>Recipient Name:<input type="text"   id="name" required /></tr>
+<br><tr/><p>Recipient Name:
+<input type="text"   id="name" ng-model="employee.questionnaire.foodstamps_recipient_info.name" required /></tr>
 
 <br/><p/><tr><label for="city"> city: </label>
-<input name="city" id="city"  ng-model="user.city"   required></input>
+<input name="city" id="city"  ng-model="employee.questionnaire.foodstamps_recipient_info.city_received"   required></input>
 
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state" ng-model="user.response.data" ng-options="state.name for state in stateList"></select> 
+<select name="state" id="state" ng-model="employee.questionnaire.foodstamps_recipient_info.county_received" ng-options="state.name for state in stateList"></select> 
 <tr><label for="county"> County: </label>
-<select name="county" id="county" ng-model="user.response.data" ng-options="county.name for state in stateList"></select> 
+<select name="county" id="county" ng-model="employee.questionnaire.foodstamps_recipient_info.county_received" ng-options="county.name for state in stateList"></select> 
 </div>
 </span>
 </div>
@@ -124,29 +126,32 @@ Recipient Name:
 <input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.voc_rehab" ng-click= "questionaire(result['5'])"/> NO
 <span ng-show="result['5'] == 'Yes'">
 <div class=well>
-<div class="well well-sm">Vocational Rehab Services</div>
+<div class="well well-sm" ng-model="employee.questionnaire.voc_rehab_info">Vocational Rehab Services</div>
+
 Received vocational rehabitation services from a vocational rehabitation  agency?
 <br>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['5']" ng-click= "questionaire(result[''])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['']" ng-click= "questionaire(result[''])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.voc_rehab_info.is_agency" ng-click= "questionaire(result[''])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.voc_rehab_info.is_agency" ng-click= "questionaire(result[''])"/> NO
+
+
 <div>
 Received vocational rehabitation services from departments of veterans affairs?
 <br>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['']" ng-click= "questionaire(result[''])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['']" ng-click= "questionaire(result[''])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.voc_rehab_info.dept_va" ng-click= "questionaire(result[''])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.voc_rehab_info.dept_va" ng-click= "questionaire(result[''])"/> NO
 </div>
 Received vocational rehabitation services from an Employement Network (Ticket to work program)?
 <br>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['']" ng-click= "questionaire(result[''])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['']" ng-click= "questionaire(result[''])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.voc_rehab_info.ttw" ng-click= "questionaire(result[''])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.voc_rehab_info.ttw" ng-click= "questionaire(result[''])"/> NO
 <label for="zipcode">   Zip: </label>
-<input type="search" id="zipcode"  ng-model="user.zipcode"   required/>
+<input type="search" id="zipcode"  ng-model="employee.questionnaire.voc_rehab_info.zip"   required/>
 <label for="city"> city: </label>
-<input name="city" id="city"  ng-model="user.city"   required></input>
+<input name="city" id="city"  ng-model="employee.questionnaire.voc_rehab_info.city"   required></input>
 <label for="state"> State: </label>
-<select name="state" id="state" ng-model="user.response.data" ng-options="state.name for state in stateList"></select> 
+<select name="state" id="state" ng-model="employee.questionnaire.voc_rehab_info.state" ng-options="state.name for state in stateList"></select> 
 <label for="county"> County: </label>
-<select name="county" id="county" ng-model="user.response.data" ng-options="county.name for state in stateList"></select>
+<select name="county" id="county" ng-model="employee.questionnaire.voc_rehab_info.county" ng-options="county.name for state in stateList"></select>
 </div>
 </span>
 </div>
@@ -154,17 +159,17 @@ Received vocational rehabitation services from an Employement Network (Ticket to
 
 <div>5.Have you been unemployeed at any time during the last 12 months?
 <br/>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['6']" ng-click= "questionaire(result['1'])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['6']" ng-click= "questionaire(result['6'])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.['6']" ng-click= "questionaire(result['1'])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.['6']" ng-click= "questionaire(result['6'])"/> NO
 <span ng-show="result['6'] == 'Yes'">
 	
 <div class="well">
 <div class="well well-sm"> Unemployment Detail</div>
 <tr><label for="date of birth"> Unemployeed From: </label>
-<input type="date" id="date" ng-model="employeeList.date" /> 
+<input type="date" id="date" ng-model="employee.questionnaire..date" /> 
 </td></tr>
 <tr><label for="date of birth">Unemployeed To : </label>
-<input type="date" id="date" ng-model="employeeList.date" /> 
+<input type="date" id="date" ng-model="employee.questionnaire..date" /> 
 </td></tr>
 </div>
 </span>
@@ -173,29 +178,29 @@ Received vocational rehabitation services from an Employement Network (Ticket to
 
 <div>6.Convicted of felony or released from prison in last 12 months?
 <br/>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['7']" ng-click= "questionaire(result['1'])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['7']" ng-click= "questionaire(result['7'])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.['7']" ng-click= "questionaire(result['1'])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.['7']" ng-click= "questionaire(result['7'])"/> NO
 <span ng-show="result['7'] == 'Yes'">
 <div class="well">
 <div class="well well-sm"> Felon Detail</div>
 <tr><label for="date of birth"> Conviction Date: </label>
-<input type="date" id="date" ng-model="employeeList.date" /> 
+<input type="date" id="date" ng-model="employee.questionnaire..date" /> 
 </td></tr>
 <tr><label for="date of birth">Date of Release: </label>
-<input type="date" id="date" ng-model="employeeList.date" /> 
+<input type="date" id="date" ng-model="employee.questionnaire..date" /> 
 </td></tr>
 <div>
 Is this a Federal Conviction?
 <br>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['']" ng-click= "questionaire(result[''])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['']" ng-click= "questionaire(result[''])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.['']" ng-click= "questionaire(result[''])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.['']" ng-click= "questionaire(result[''])"/> NO
 </div>
 
 <div>
 Is this a state Conviction?
 <br>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['']" ng-click= "questionaire(result[''])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['']" ng-click= "questionaire(result[''])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.['']" ng-click= "questionaire(result[''])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.['']" ng-click= "questionaire(result[''])"/> NO
 </div>
 
 
@@ -208,7 +213,7 @@ Is this a state Conviction?
  </div>
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state" ng-model="employeeList.response.data" ng-options="state.name for state in stateList"></select> 
+<select name="state" id="state" ng-model="employee.questionnaire..response.data" ng-options="state.name for state in stateList"></select> 
 
 
 
@@ -219,8 +224,8 @@ Is this a state Conviction?
 
 <div>7.Are you or your spouse a member of a Native American Tribe?
 <br/>
-<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="result['8']" ng-click= "questionaire(result['1'])" />YES
-<input name="q2" value="no" id="value2" type="radio" ng-model="result['8']" ng-click= "questionaire(result['8'])"/> NO
+<input name="q2" value="Yes" id="value1" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.['8']" ng-click= "questionaire(result['1'])" />YES
+<input name="q2" value="no" id="value2" type="radio" ng-model="employee.questionnaire.['8']" ng-click= "questionaire(result['8'])"/> NO
 <span ng-show="result['8'] == 'Yes'">print something</span>
 </div>
 
