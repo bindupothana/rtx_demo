@@ -1,12 +1,13 @@
 <form>
 <h2><div class=" well">
 Employee Registrtion</div></h2>
-<div class="well">
-<td>
-<tr><label for="Company"> Company: </label>
-<input type="text"  ng-model="employee.employee_info.Company"   required/><tr/>
+
+<div class="well"><td>
+ <tr><label for="Company"> Company: </label>
+  <input type="text"  ng-model="employee.employee_info.Company"   required/><tr/>
+
 <tr><label for="Location"> Location: </label>
-<input type="text" name="" id="" ng-model="Location"   required/><tr/>
+<input type="text" name="Location" id="" ng-model="employee.employee_info.Location"   required/><tr/>
 
  <div><br/>
  <label>First Name:</label>
@@ -19,7 +20,7 @@ Employee Registrtion</div></h2>
 
 
 <tr>LastName: 
-<input type="text" id= "label" "  ng-model="employee.employee_info.last_name" name="last_name"  required /></tr>
+<input type="text" id= "label"   ng-model="employee.employee_info.last_name" name="last_name"  required /></tr>
 
 <div><br/>
 <label id="label" >Suffix:</label>
@@ -30,21 +31,23 @@ Employee Registrtion</div></h2>
 </div>
 
 <br>
-<tr><label for="Address"> Address1: </label>
-<input type="text" >
-<tr><label for="Address"> Address2: </label>
-<input type="text" >
+<tr><label for="Address1"> Address1: </label>
+<input type="text" ng-model="employee.employee_info.Address1">
+<tr><label for="Address2"> Address2: </label>
+<input type="text" ng-model="employee.employee_info.Address2" >
 </br>
 
 <br>
-<tr><label for="zipcode">   Zip: </label>
-<input type="search" id="zipcode"  ng-model="employee.employee_info.zipcode"   required/>
+<div class="zip-wrap">
+<input type="text" pattern="[0-9]*" name="zip" id="zip"  ng-model="employee.employee_info.zip">
+<label for="zip">Zip Code</label>
+
 <tr><label for="city"> city: </label>
 <input name="city" id="city"  ng-model="employee.employee_info.city"   required></input>
 
 
 <tr><label for="state"> State: </label>
-<select name="state" id="state" ng-model="employee.employee_info.response.data" ng-options="state.name for state in stateList"></select> 
+<select name="state" id="state" ng-model="employee.employee_info.response.state" ng-options="state.name for state in stateList"></select> 
 
 
 <br>
