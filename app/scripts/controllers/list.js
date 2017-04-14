@@ -1,21 +1,22 @@
  var app = angular.module('rtxDemoApp');
   app.controller('listCtrl',['$scope','stateService','$state',
   	function($scope,stateService,$state) {
-       $scope.employee.questionnaire.result = {};
+       $scope.questionnaire = {};
        $scope.inner_question = {};
 
-      $scope.employeeList = JSON.parse(localStorage.getItem('employeeList'));
-     $scope.submitNewEmployee=function(emp){
-      $scope.employeeList =  JSON.parse(localStorage.getItem('employeeList'));    
-       if( $scope.employeeList == null){
-          $scope.employeeList = [];
+      $scope.employee = JSON.parse(localStorage.getItem('employee'));
+     $scope.submitNewEmployee=function(employee){
+      console.log("print_emp_info_new",employee)
+      $scope.employee =  JSON.parse(localStorage.getItem('employee'));    
+       if( $scope.employee == null){
+          $scope.employee = [];
         }
-        $scope.employeeList.push(emp);
-        console.log("push_emp",$scope.employeeList)
+        $scope.employee.push(employee);
+        console.log("push_emp",$scope.employee)
 
-        localStorage.setItem('employeeList', JSON.stringify( $scope.employeeList));
+        localStorage.setItem('employee', JSON.stringify( $scope.employee));
   
-        console.log(" employeeList", $scope.employeeList)
+        console.log(" employee", $scope.employee)
 
         $state.go("list");
      };
@@ -31,7 +32,7 @@
     $scope.getStateList();
     
 
-    $scope.questionaire = function(value){
+    $scope.questionnaire = function(value){
     console.log(value)
     }
    

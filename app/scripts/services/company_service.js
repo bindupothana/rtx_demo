@@ -1,6 +1,6 @@
 var app = angular.module('rtxDemoApp');
 
-app.service('stateService', ['$http',function($http) { 
+app.service('companyService', ['$http',function($http) { 
  return{
       getStateName:function(states) {
        //  var storeData=JSON.parse(localStorage.getItem('storeData'));
@@ -26,7 +26,6 @@ app.service('stateService', ['$http',function($http) {
  
 
 }]);
-
 
 
 

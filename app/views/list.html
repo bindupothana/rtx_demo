@@ -12,15 +12,16 @@
 			<th>Lastname</th>
 			<th>Suffix</th>
 	        <th>options</th>
+
 		</tr>
-		<tr ng-repeat="emp in employeeList">
+		<tr ng-repeat="emp in employee">
 		    <td>{{emp.first_name}}</td>  
 			<td>{{emp.last_name }}</td>  
-			<td>{{ emp.suffix }}</td> 
+			<td>{{emp.suffix }}</td> 
 
 			<td><a ui-sref="employee_edit({id: $index})">Details</a></td> 	
 		</tr>	
-	</table>
+	</table>{{employee}}
 	
 	
 </div>
