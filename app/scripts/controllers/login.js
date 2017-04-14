@@ -13,8 +13,10 @@ app.controller('loginCtrl',['$scope','loginService','$state',
            if(response.status == 200){            
 	 	  	$scope.storeData =  JSON.parse(localStorage.getItem('$scope.storeData'));
              $scope.storeData = [];
+               console.log("data", $scope.storeData )
+               
              $scope.storeData.push(response.data);
-              console.log($state)
+              console.log("login",response.data)
                
                $state.go("empinfo"); 
               return localStorage.setItem('user_info', JSON.stringify($scope.storeData));         
@@ -23,7 +25,7 @@ app.controller('loginCtrl',['$scope','loginService','$state',
 
 	 	  	        }                   
 	 	  	         },function(error){       
-	 	  	              console.error(JSON.stringify(err));
+	 	  	              console.error("login_ss",JSON.stringify(err));
                           $scope.validationError = true;   
 	 	  	                   })   
 	 	  	                    };

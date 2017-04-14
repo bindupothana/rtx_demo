@@ -1,6 +1,7 @@
 
   var app = angular.module('rtxDemoApp');
-  app.controller('regCtrl',['$scope','$stateParams','stateService','$state',function($scope,$stateParams,stateService,$state) {
+  app.controller('regCtrl',['$scope','$state',
+    function($scope,$state) {
     $scope.newRegister=function(user){
       
       $state.go("newemployee");

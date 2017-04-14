@@ -21,7 +21,7 @@
 
      $scope.getStateList=function(){
         $scope.selectState =stateService.getStateName().then(function(response){
-          $scope.stateList =response.data; 
+          $scope.stateList = response.data; 
           console.log("states",response.data)     
         })
      }
@@ -30,10 +30,10 @@
 
 
      $scope.getCounties=function(){
-        console.log("counties",$scope.getCounty)  
-        $scope.selectCounty =countyService.getCounty().then(function(value){
-           console.log("counties",$scope.selectCounty)
-           $scope.counties =value.data;
+        $scope.selectCounty =countyService.get_afdc_recipient_info_county_received('DC').then(function(countyResponse){
+           $scope.countiesList =countyResponse.data;
+           console.log("counties",$scope.get_afdc_recipient_info_county_received)
+           console.log("counties",companiesResponse.data)   
          })           
       }
       $scope.getCounties(); 
@@ -53,6 +53,16 @@
         $scope.selectLocation =locationService.getLocation().then(function(locationResponse){
           $scope.locationList =locationResponse.data; 
           console.log("locations",locationResponse.data)     
+        })
+      }
+      $scope.getLocations();
+
+
+
+      $scope.getEmployees=function(){
+        $scope.selectEmployee =locationService.getEmployees().then(function(employeeResponse){
+          $scope.employeeList =employeeResponse.data; 
+          console.log("employees",employeeResponse.data)     
         })
       }
       $scope.getLocations();

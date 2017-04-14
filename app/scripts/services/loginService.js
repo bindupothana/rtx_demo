@@ -8,7 +8,7 @@ app.service('loginService', ['$http',function($http) {
                 method: 'POST',
                 url: 'https://api-qa.retrotax-aci.com/authentication',
                 data: credentials,
-                headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "Content-Type": "application/json"},
+                headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa",  "Content-Type": "application/json"},
                 responseType: 'json'
               });
           }

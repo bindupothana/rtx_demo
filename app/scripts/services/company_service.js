@@ -4,9 +4,10 @@ app.service('companyService', ['$http',function($http) {
  return{
       getCompanies:function(companies) {
           var user_info = JSON.parse(localStorage.getItem('user_info'));
-           console.log("companies",user_info)
+           console.log("company_user_info",user_info)
           var auth_info = user_info.auth_token;
-           console.log("companies",auth_info)
+           console.log(user_info.auth_token)
+           console.log("jjjjjjj",auth_info)
            console.log('call http with object', companies);
       return  $http({
                 method: 'GET',
