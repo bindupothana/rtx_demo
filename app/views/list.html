@@ -6,7 +6,7 @@
 	<h2>List of Employees</h2>
 	<span class="clerfix"></span>
 	<hr>
-   <table class="table table-striped">
+   <table id="DisplayTable"  class="table table-striped">
 	    <tr>
 		    <th>Firstname</th>
 			<th>Lastname</th>
@@ -14,14 +14,15 @@
 	        <th>options</th>
 
 		</tr>
-		<tr ng-repeat="emp in employee">
-		    <td>{{emp.first_name}}</td>  
-			<td>{{emp.last_name }}</td>  
-			<td>{{emp.suffix }}</td> 
+		<tr ng-repeat="emp in employeeList">
+		   <td>{{emp.first_name[$index]}}</td>  
+		    <td>{{$index}}</td>  
+			<td>{{$index}}</td>  
+			<td>{{$index}}</td> 
 
 			<td><a ui-sref="employee_edit({id: $index})">Details</a></td> 	
 		</tr>	
-	</table>{{employee}}
+	</table>{{employeeList}}
 	
 	
 </div>
