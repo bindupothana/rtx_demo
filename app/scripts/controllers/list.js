@@ -2,7 +2,7 @@
   app.controller('listCtrl',['$scope','stateService','countyService','companyService','locationService','$state',
   	function($scope,stateService,countyService,companyService,locationService,$state) {
        $scope.questionnaire = {};
-       $scope.inner_question = {};
+       $scope.questionnaires = {};
 
         $scope.employee = JSON.parse(localStorage.getItem('employee'));
         $scope.submitNewEmployee=function(employee){
@@ -30,7 +30,7 @@
 
 
      $scope.getCounties=function(){
-        $scope.selectCounty =countyService.get_afdc_recipient_info_county_received('DC').then(function(countyResponse){
+        $scope.selectCounty =countyService.get_afdc_recipient_info_county_received('state_code').then(function(countyResponse){
            $scope.countiesList =countyResponse.data;
            console.log("counties",$scope.get_afdc_recipient_info_county_received)
            console.log("counties",companiesResponse.data)   
@@ -73,7 +73,7 @@
     }
    
 
-    $scope.validation_inner_questionaire = function(value){
+    $scope.questionnaires = function(value){
     console.log("print_value",value)
     }
    

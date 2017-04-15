@@ -60,21 +60,20 @@ Employee Registrtion</div></h2>
 <!-- </div>
  -->
 <p><h5>Have you ever worked before this company?</h5>
-  <input name="question_yes_rehire" value="Yes" id="question_yes_rehire" type="radio" ng-model="employee.employee_info[index].rehire" ng-click= "employee.employee_info[index].rehire=(value=='Yes'? true:false)" />YES
+  <input name="question_yes_rehire" value="Yes" id="question_yes_rehire" type="radio" ng-model="employee.employee_info[index].rehire['1']" ng-click= "questionnaire(employee.employee_info[index].rehire['1'])" />YES
 
-  <input name="question_no_rehire" value="no" id="quecstion_no_rehire" type="radio" ng-model="employee.employee_info[index].rehire" ng-click= "employee.employee_info[index].rehire=(value=='no' ? true:false)"/> NO
+  <input name="question_no_rehire" value="no" id="quecstion_no_rehire" type="radio" ng-model="employee.employee_info[index].rehire['1']" ng-click= "questionnaire(employee.employee_info[index].rehire['1'])"/> NO
  <div>
-<span ng-show="employee.employee_info[index].rehire">
+<span ng-show="employee.employee_info[index].rehire['1']=='no'"> 
 
-</div>
 
 <div class="well">
   <div >1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
  <br/>
- <input name="questionnaire_yes_afdc" value="Yes" id="questionnaire_yes_afdc" type="radio" ng-check="q1[index].selected"  ng-model="employee.questionnaire.afdc" ng-click= "validation_inner_questionaire(inner_question['1'])" />YES
+ <input name="questionnaire_yes_afdc" value="Yes" id="questionnaire_yes_afdc" type="radio"   ng-model="employee.questionnaire.afdc[1]" ng-click= "questionnaires(employee.questionnaire.afdc[1])" />YES
 <input name="questionnaire_no_afdc" value="no" id="questionnaire_no_afdc" type="radio" 
-  ng-model="employee.questionnaire.afdc" ng-click= "validation_inner_questionaire(inner_question['1'])"/>NO
-<span ng-show="inner_question['1'] == 'Yes'">
+  ng-model="employee.questionnaire.afdc" ng-click= "questionnaires(employee.questionnaire.afdc[1])"/>NO
+<span ng-show="employee.questionnaire.afdc[1] == 'Yes'">
 <div class="well">
 <div class="well well-sm" > TANF Benefits Recipient Details</div>
 
@@ -239,6 +238,7 @@ Is this a state Conviction?
 </div>
 
 </span>
+</div>
 </div>
 </div>
 
