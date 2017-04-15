@@ -11,15 +11,11 @@ app.controller('loginCtrl',['$scope','loginService','$state',
 	 	}     
 	 	  loginService.postName(obj).then(function(response){ 
            if(response.status == 200){            
-	 	  	$scope.storeData =  JSON.parse(localStorage.getItem('$scope.storeData'));
-             $scope.storeData = [];
-               console.log("data", $scope.storeData )
-               
-             $scope.storeData.push(response.data);
-              console.log("login",response.data)
-               
+
+             	console.log("login",response.data)
+				localStorage.setItem('user_info', JSON.stringify(response.data));                
                $state.go("empinfo"); 
-              return localStorage.setItem('user_info', JSON.stringify($scope.storeData));         
+                     
 	 	  	   }else {
 	 	  	   	        var data={};
 

@@ -2,7 +2,7 @@ var app = angular.module('rtxDemoApp');
 
 app.service('locationService', ['$http',function($http) { 
    return{
-        getLocation:function(location) {
+        getLocation:function(location, company_id) {
            var user_info = JSON.parse(localStorage.getItem('user_info'));
               console.log("location_user_info",user_info)
            var auth_info = user_info.auth_token;
@@ -10,8 +10,8 @@ app.service('locationService', ['$http',function($http) {
                console.log('call http with object', location);
     return  $http({
                 method: 'GET',
-                url: ' https://api-qa.retrotax-aci.com//companies/{company_id}/locations',   
-                data: states,
+                url: ' https://api-qa.retrotax-aci.com/companies/' +company_id+ '/locations',   
+                data: location,
                 headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "X-AUTH-TOKEN": auth_info,"Content-Type": "application/json"},
                 responseType: 'json'
                 });

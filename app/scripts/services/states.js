@@ -9,9 +9,9 @@ app.service('stateService', ['$http',function($http,$authProvider) {
    var user_info = JSON.parse(localStorage.getItem('user_info'));
        console.log("state_user_info",user_info)
         var auth_info = user_info.auth_token;
-        console.log(user_info)
-      //   console.log("states",auth_info)
-      // console.log('call http with object', states);
+        
+        console.log("states",auth_info)
+      console.log('call http with object', states);
       return  $http({
                 method: 'GET',
                 url: ' https://api-qa.retrotax-aci.com/states',   

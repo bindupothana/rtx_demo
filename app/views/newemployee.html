@@ -4,10 +4,10 @@ Employee Registrtion</div></h2>
 
 <div class="well"><td>
     <tr><label for="company"> Company: </label>
-    <input type="text"  name="company_id" id="company_id" ng-model="employee.employee_info.company_id" ng-options=""  required/><tr/>
+ <select name="company" id="company" ng-model="employee.employee_info.company" ng-options="company.legal_name for company in companiesList"></select> 
 
    <tr><label for="Location"> Location: </label>
-   <input type="text" name="location_id" id="location_id" ng-model="employee.employee_info.location_id"   required/><tr/>
+   <select type="text" name="location_id" id="location_id" ng-model="employee.employee_info.location_id" ng-change="" ng-options="Location.location_id for Location in locationList" required/></select>
 
     <div><br/>
       <label>First Name:</label>
@@ -62,7 +62,7 @@ Employee Registrtion</div></h2>
 <p><h5>Have you ever worked before this company?</h5>
   <input name="question_yes_rehire" value="Yes" id="question_yes_rehire" type="radio" ng-model="employee.employee_info[index].rehire" ng-click= "employee.employee_info[index].rehire=(value=='Yes'? true:false)" />YES
 
-  <input name="question_no_rehire" value="no" id="question_no_rehire" type="radio" ng-model="employee.employee_info[index].rehire" ng-click= "employee.employee_info[index].rehire=(value=='no' ? true:false)"/> NO
+  <input name="question_no_rehire" value="no" id="quecstion_no_rehire" type="radio" ng-model="employee.employee_info[index].rehire" ng-click= "employee.employee_info[index].rehire=(value=='no' ? true:false)"/> NO
  <div>
 <span ng-show="employee.employee_info[index].rehire">
 
