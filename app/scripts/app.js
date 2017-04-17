@@ -34,7 +34,7 @@
    .state('empinfo', {
         url : '/empinfo', 
         templateUrl: 'views/empinfo.html',
-        controller: 'regCtrl'
+        controller: 'informationCtrl'
     })
      
    .state('list', {
@@ -45,7 +45,7 @@
    .state('newemployee', {
         url : '/newemployee', 
         templateUrl: 'views/newemployee.html',
-        controller: 'employeeCtrl'  
+        controller: 'newemployeeCtrl'  
     }) 
      .state('emp_full_detail', {
         url : '/emp_full_detail/:id', 

@@ -1,23 +1,28 @@
  var app = angular.module('rtxDemoApp');
-  app.controller('employeeCtrl',['$scope','employeeService','stateService','countyService','companyService','locationService','$state',
-  	function($scope,employeeService,stateService,countyService,companyService,locationService,$state) {
+  app.controller('newemployeeCtrl',['$scope','employeeService','stateService','countyService','foodService','felonService','companyService','locationService','postemployeesService','$state',
+  	function($scope,employeeService,stateService,countyService,foodService,felonService,companyService,postemployeesService,locationService,$state) {
        $scope.questionnaire = {};
        $scope.questionnaires = {};
 
-        $scope.employee = JSON.parse(localStorage.getItem('employee'));
-        $scope.submitNewEmployee=function(employees){
-            console.log("print_emp_info_new",employees)
-             // $scope.employee =  JSON.parse(localStorage.getItem('employee'));    
-             //   if( $scope.employee == null){
-             //       $scope.employee = [];
-             //      }
-           // $scope.employee.push(employees);
-           // console.log("push_emp",$scope.employee)
-           // localStorage.setItem('employee', JSON.stringify( $scope.employee));  
-            // console.log(" employeeList", $scope.employeeList)
-           /// $state.go("list");
-        };
+    
+        $scope.submitNewEmployee=function(employee){
+          var obj={            
+           'first_name':employee.employee_info.first_name,            
+            'last_name':employee.employee_info.last_name 
+             }     
+           postemployeesService.postEmployees(obj).then(function(response){ 
+            if(response.status == 200){            
+              console.log("employee",response.data)
+                localStorage.setItem('user_info', JSON.stringify(response.data));                
+                 $state.go("list"); 
+                     
+           }                  
+                 
+        })  
+     };
       
+
+    
 
       $scope.getEmployee_info_details=function(){
        employeeService.getEmployees($state.params.id).then(function(employeeResponse){
@@ -38,14 +43,37 @@
 
 
 
-     $scope.getCounties=function(){
-        $scope.selectCounty =countyService.get_afdc_recipient_info_county_received('state_code').then(function(countyResponse){
-           $scope.countiesList =countyResponse.data;
-           console.log("counties",$scope.get_afdc_recipient_info_county_received)
-           console.log("counties",companiesResponse.data)   
+     $scope.get_afdc_counties=function(state_code){
+      console.log("county",state_code)
+        countyService.get_afdc_recipient_info_county_received(state_code).then(function(countyResponse){
+           $scope.afdcCountiesList =countyResponse.data;
+          
+           console.log("counties",countyResponse.data)   
          })           
       }
-     // $scope.getCounties(); 
+       $scope.get_foodstamps_counties=function(state_code){
+      console.log("county",state_code)
+        foodService.get_foodstamps_recipient_info_county_received (state_code).then(function(foodstampsResponse){
+           $scope.foodstampsCountiesList =foodstampsResponse.data;
+          
+           console.log("counties",foodstampsResponse.data)   
+         })           
+      }
+      $scope.get_felon_state=function(state_code){
+      console.log("county",state_code)
+        felonService.felon_info_yes_is_state_conviction (state_code).then(function(felonResponse){
+           $scope.felonCountiesList =felonResponse.data;
+          
+           console.log("counties",felonResponse.data)   
+         })           
+      }
+
+
+
+
+
+
+
 
 
       $scope.getCompaniesList=function(){
@@ -53,7 +81,7 @@
           $scope.companiesList =companiesResponse.data; 
 
           console.log("companies",companiesResponse.data)  
-          // console.log("locations",$scope.item.fein)    
+            
         })
 
       }
@@ -68,7 +96,7 @@
         })
       }
     
-  //  $scope.getlocations();
+  
 
 
     $scope.questionnaire = function(value){

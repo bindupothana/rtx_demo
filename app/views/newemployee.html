@@ -88,9 +88,14 @@ Employee Registrtion</div></h2>
                  <input name="city" id="afdc_recipient_info_city_received" name="afdc_recipient_info_city_received" ng-model="employee.questionnaire.afdc_recipient_info.city_received"   required></input>
               </div>
                  <tr><label for="state"> State: </label>
-                  <select name="afdc_recipient_info_state_received" id="afdc_recipient_info_state_received" ng-model="employee.questionnaire.afdc_recipient_info.state_received" ng-options="state.name for state in stateList"></select> 
+                  <select name="afdc_recipient_info_state_received" id="afdc_recipient_info_state_received" ng-model="employee.questionnaire.afdc_recipient_info.state_received" ng-change="get_afdc_counties(employee.questionnaire.afdc_recipient_info.state_received)" >
+                     <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
+                  </select> 
                  <tr><label for="county"> County: </label>
-                  <select name="afdc_recipient_info_county_received" id="afdc_recipient_info_county_received"  ng-change="getCounties()"  ng-model="employee.questionnaire.afdc_recipient_info.county_received" ng-options="county.name for state in stateList" ></select> 
+                  <select name="afdc_recipient_info_county_received" id="afdc_recipient_info_county_received"    ng-model="employee.questionnaire.afdc_recipient_info.county_received" >
+                      <option ng-repeat="county in afdcCountiesList" ng-value="county.id">{{county.name}}</option>
+
+                  </select> 
               </div>
          </span>
 </div>
@@ -106,9 +111,14 @@ Employee Registrtion</div></h2>
                 <br/><p/><tr><label for="city"> city: </label>
               <input name="city" id="foodstamps_recipient_info_city_received" name="foodstamps_recipient_info_city_received" ng-model="employee.questionnaire.foodstamps_recipient_info.city_received"   required></input>
               <tr><label for="state"> State: </label>
-              <select name="foodstamps_recipient_info_state_received" id="foodstamps_recipient_info_state_received" ng-model="employee.questionnaire.foodstamps_recipient_info.state_received" ng-options="state.name for state in stateList"></select> 
+              <select name="foodstamps_recipient_info_state_received" id="foodstamps_recipient_info_state_received" ng-model="employee.questionnaire.foodstamps_recipient_info.state_received" ng-change="get_foodstamps_counties(employee.questionnaire.foodstamps_recipient_info.state_received)">
+                <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
+
+              </select> 
               <tr><label for="county"> County: </label>
-              <select name="foodstamps_recipient_info_county_received" id="foodstamps_recipient_info_county_received" ng-model="employee.questionnaire.foodstamps_recipient_info.county_received" ng-options="county.name for county in countiesList" ng-change=""></select> 
+              <select name="foodstamps_recipient_info_county_received" id="foodstamps_recipient_info_county_received" ng-model="employee.questionnaire.foodstamps_recipient_info.county_received" >
+                 <option ng-repeat="county in foodstampsCountiesList" ng-value="county.id">{{county.name}}</option>
+              </select> 
         </div>
      </span>
 </div>
@@ -207,9 +217,16 @@ Employee Registrtion</div></h2>
                   <input type="text" name="felon_info_parole_officer_phone"  id="felon_info_parole_officer_phone" ng-model="employee.questionnaire.felon_info.parole_officer_phone">
                </div>
                <tr><label for="state"> State: </label>
-                <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.questionnaire.felon_info.felony_state" ng-options="state.name for state in stateList"></select> 
+                <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.questionnaire.felon_info.felony_state" ng-change="get_felon_state(employee.questionnaire.felon_info.felony_state)">
+                  <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
+                </select> 
+
+
+
                 <tr><label for="county"> County: </label>
-                <select name="felon_info_felony_county" id="felon_info_felony_county" ng-model="employee.questionnaire.felon_info.felony_county" ng-options="county.name for county in countiesList" ng-change=""></select>
+                <select name="felon_info_felony_county" id="felon_info_felony_county" ng-model="employee.questionnaire.felon_info.felony_county" >
+                   <option ng-repeat="county in felonCountiesList" ng-value="county.id">{{county.name}}</option>
+                 </select>
           </div>
      </span>
 </div>

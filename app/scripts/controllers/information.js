@@ -1,6 +1,6 @@
 
   var app = angular.module('rtxDemoApp');
-  app.controller('regCtrl',['$scope','$state',
+  app.controller('informationCtrl',['$scope','$state',
     function($scope,$state) {
     $scope.newRegister=function(user){
       
