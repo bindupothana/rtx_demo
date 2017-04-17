@@ -1,90 +1,91 @@
 <form>
 <h2><div class=" well">
  Employee Details</div></h2>
+ <div class="well">
+     <h4>Basic Employee information:</h4>
+        <div>
+	       <span ><h6/>Location ID:
+	         {{employeeData.employee_info.location_id}}
+	       </span>
+	    </div>
+	    <div>
+	      <span ><h6/>First Name:
+           {{employeeData.employee_info.first_name}}
+	      </span>
+	    </div>
+	    <div>
+	      <span ><h6/>Last Name:
+            {{employeeData.employee_info.last_name}}
+          </span>
+	    </div>
+        <div>
+	       <span ><h6/>Employee ID:
+            {{employeeData.employee_info.id}}
+           </span>
+	   </div>
+       <div>
+	     <span ><h6/>Suffix:
+           {{employeeData.employee_info.suffix}}
+         </span>
+	   </div>
+	   <div>
+	     <span ><h6/>Address 1:
+            {{employeeData.employee_info.address_line_1}}
+         </span>
+	  </div>
+	  <div>
+	    <span ><h6/>Address 2:
+          {{employeeData.employee_info.address_line_2}}
+        </span>
+	  </div>
+	  <div>
+	     <span ><h6/>City:
+	        {{employeeData.employee_info.city}}
+	     </span>
+	 </div>
+	<div>
+	   <span ><h6/>County:
+	     {{employeeData.employee_info.county}}
+	   </span>
+	</div>
+	<div>
+	  <span ><h6/>State:
+        {{employeeData.employee_info.state}}
+	  </span>
+	</div>
+	<div>
+	  <span ><h6/>Zip:
+         {{employeeData.employee_info.zip}}
+	  </span>
+	</div>
+	<div>
+	   <span ><h6/>Ssn:
+          {{employeeData.employee_info.ssn}}
+	   </span>
+	<div>
+	  <h6/>Have you ever worked before this company?
+	  <br><li>
+	    {{employeeData.employee_info.rehire}}
+	    </li>
+	</div>
+</div>
 
-<div class="well">
-<h4>Basic Employee information:</h4>
-<div ng-repeat="emp in employeeList"></div>
-    
-	<div>
-	<span >Location ID:
-	 {{employeeData.employee_info.location_id}}
-	</span>
-	</div>
-	<div>
-	<span >First Name:
-    {{employeeData.employee_info.first_name}}
-	</span>
-	</div>
-	<div>
-	<span >Last Name:
-    {{employeeData.employee_info.last_name}}
-
-	</span>
-	</div>
-      <div>
-	<span >Employee ID::
-    {{employeeData.employee_info.id}}
-
-	</span>
-	</div>
-
-
-	<div>
-	<span >Suffix:
-    {{employeeData.employee_info.suffix}}
-
-	</span>
-	</div>
-	<div>
-	<span >Address 1:
-    {{employeeData.employee_info.address_line_1}}
-
-	</span>
-	</div>
-	<div>
-	<span >Address 2:
-
-	    {{employeeData.employee_info.address_line_2}}
-</span>
-	</div>
-	<div>
-	<span >City:
-	{{employeeData.employee_info.city}}</span>
-	</div>
-	<div>
-	<span >County:
-	{{employeeData.employee_info.county}}</span>
-	</div>
-	<div>
-	<span >State:
-{{employeeData.employee_info.state}}
-	</span>
-	</div>
-	<div>
-	<span >Zip:
-{{employeeData.employee_info.zip}}
-	</span>
-	</div>
-	<div>
-	<span >Ssn:
-{{employeeData.employee_info.ssn}}
-	</span>
-	<div>Have you ever worked before this company?
-	<br>
-	{{employeeData.employee_info.rehire}}
-	</div>
-	</div>
 </div>
 <div class="well">
 	<h4>Questionnaire:</h4>
 	<div>
 	<span >
-	  1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
+	 <h5/> 1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
 	   <div>
 	   <li>
          {{employeeData.questionnaire.afdc}}
          </li>
+        
+	       <br><h6/>  Name: {{employeeData.afdc_recipient_info.name}}
+	         <br><h6/> City: {{employeeData.afdc_recipient_info.city_received}}
+	        <br><h6/>  State: {{employeeData.afdc_recipient_info.state_received}}
+	        <br><h6/>  County: {{employeeData.afdc_recipient_info.county_received}}
+        
          </div>
 
 	 2.Have you or has anyone living with you received food Stamps (SNAP)at any time during the past 15 months?

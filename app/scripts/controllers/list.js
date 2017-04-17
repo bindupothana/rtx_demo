@@ -2,10 +2,6 @@
   app.controller('listCtrl',['$scope','employeeService','$state',
   	function($scope,employeeService,$state) {
    
-
-
-
-
       $scope.getEmployees=function(){
        employeeService.getEmployees().then(function(employeeResponse){
           $scope.employeeList =employeeResponse.data.list; 
