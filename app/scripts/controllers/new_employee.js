@@ -1,6 +1,6 @@
  var app = angular.module('rtxDemoApp');
-  app.controller('newemployeeCtrl',['$scope','employeeService','stateService','countyService','foodService','felonService','companyService','locationService','postemployeesService','$state',
-  	function($scope,employeeService,stateService,countyService,foodService,felonService,companyService,postemployeesService,locationService,$state) {
+  app.controller('newemployeeCtrl',['$scope','employeeService','postemployeesService','stateService','countyService','foodService','felonService','companyService','locationService','$state',
+  	function($scope,employeeService,postemployeesService,stateService,countyService,foodService,felonService,companyService,locationService,$state) {
        $scope.questionnaire = {};
        $scope.questionnaires = {};
 
@@ -10,17 +10,22 @@
            'first_name':employee.employee_info.first_name,            
             'last_name':employee.employee_info.last_name 
              }     
-           postemployeesService.postEmployees(obj).then(function(response){ 
-            if(response.status == 200){            
-              console.log("employee",response.data)
-                localStorage.setItem('user_info', JSON.stringify(response.data));                
+              postemployeesService.postEmployees(obj).then(function(response){ 
+                console.log("employee",response.data)
+                localStorage.setItem('user_info', JSON.stringify(response.data));
+                $scope.saveEmployee =response.data; 
+          console.log("employee _info",response.data)                     
                  $state.go("list"); 
                      
-           }                  
+                
                  
         })  
      };
+     $scope.submitNewEmployee();
+
       
+
+
 
     
 
