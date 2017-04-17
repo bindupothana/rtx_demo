@@ -1,8 +1,141 @@
-<h4>Employee Information</h4>
-First Name:
-Last Name:
-Suffix:
-Temporary Address:
-permanent Address:
-City:
-State:
+<form>
+<h2><div class=" well">
+ Employee Details</div></h2>
+
+<div class="well">
+<h4>Basic Employee information:</h4>
+<div ng-repeat="emp in employeeList"></div>
+    
+	<div>
+	<span >Location ID:
+	 {{employeeData.employee_info.location_id}}
+	</span>
+	</div>
+	<div>
+	<span >First Name:
+    {{employeeData.employee_info.first_name}}
+	</span>
+	</div>
+	<div>
+	<span >Last Name:
+    {{employeeData.employee_info.last_name}}
+
+	</span>
+	</div>
+      <div>
+	<span >Employee ID::
+    {{employeeData.employee_info.id}}
+
+	</span>
+	</div>
+
+
+	<div>
+	<span >Suffix:
+    {{employeeData.employee_info.suffix}}
+
+	</span>
+	</div>
+	<div>
+	<span >Address 1:
+    {{employeeData.employee_info.address_line_1}}
+
+	</span>
+	</div>
+	<div>
+	<span >Address 2:
+
+	    {{employeeData.employee_info.address_line_2}}
+</span>
+	</div>
+	<div>
+	<span >City:
+	{{employeeData.employee_info.city}}</span>
+	</div>
+	<div>
+	<span >County:
+	{{employeeData.employee_info.county}}</span>
+	</div>
+	<div>
+	<span >State:
+{{employeeData.employee_info.state}}
+	</span>
+	</div>
+	<div>
+	<span >Zip:
+{{employeeData.employee_info.zip}}
+	</span>
+	</div>
+	<div>
+	<span >Ssn:
+{{employeeData.employee_info.ssn}}
+	</span>
+	<div>Have you ever worked before this company?
+	<br>
+	{{employeeData.employee_info.rehire}}
+	</div>
+	</div>
+</div>
+<div class="well">
+	<h4>Questionnaire:</h4>
+	<div>
+	<span >
+	  1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
+	   <div>
+	   <li>
+         {{employeeData.questionnaire.afdc}}
+         </li>
+         </div>
+
+	 2.Have you or has anyone living with you received food Stamps (SNAP)at any time during the past 15 months?
+	 <div>
+	 <li>
+	 	{{employeeData.questionnaire.food_stamps}}
+	 	</li>
+	 </div>
+
+
+	 3.Have you received Supplement Security Income(SSI)at any time within the past 3 months?
+	  <div>
+	 <li>
+	 	{{employeeData.questionnaire.ssi}}
+	 	</li>
+	 </div>
+	 4.Have you received any type of vocational rehabitation services within  the past two year?
+	  <div>
+	 <li>
+	 	{{employeeData.questionnaire.voc_rehab}}
+	 	</li>
+	 </div>
+
+	 5.Have you been unemployed at any time during the last 12 months?
+	  <div>
+	 <li>
+	 	{{employeeData.questionnaire.unemployed}}
+	 	</li>
+	 </div>
+	 6.Convicted of felony or released from prison in last 12 months?
+	  <div>
+	 <li>
+	 	{{employeeData.questionnaire.felon}}
+	 	</li>
+	 </div>
+
+
+
+<br>
+
+  <button  type="button" class="btn btn-info btn-lg pull-right"   ng-click="go_to_employee_list_page()">Add Employee </button>
+  <button  type="button" class="btn btn-info btn-lg pull-right"  ng-click="employees_list_page()" style="margin-right:10px;">List of Employees</button>
+
+	
+
+  
+  
+
+
+
+
+
+
+       

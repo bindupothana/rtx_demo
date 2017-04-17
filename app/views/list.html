@@ -8,21 +8,23 @@
 	<hr>
    <table id="DisplayTable"  class="table table-striped">
 	    <tr>
-		    <th>Firstname</th>
-			<th>Lastname</th>
-			<th>Suffix</th>
-	        <th>options</th>
+	        <th>SNO</th>
+	        <th>Employee Id </th>
+		    <th>Employee Name</th>
+			<th>Address</th>
+			<th>Rehire Employee</th>
+	        <th>Details</th>
 
 		</tr>
 		<tr ng-repeat="emp in employeeList">
-		   <td>{{emp.first_name[$index]}}</td>  
-		    <td>{{$index}}</td>  
-			<td>{{$index}}</td>  
-			<td>{{$index}}</td> 
-
-			<td><a ui-sref="employee_edit({id: $index})">Details</a></td> 	
+		   <td>{{$index+ 1}}</td>  
+		    <td>{{emp.employee_info.id}}</td>  
+			<td>{{emp.employee_info.first_name}} {{emp.employee_info.last_name}}</td>  
+			<td>{{emp.employee_info.address_line_1}}</td> 
+            <td>{{emp.employee_info.rehire}}</td>
+			<td><a ui-sref="emp_full_detail({id: emp.employee_info.id})">Details</a></td> 	
 		</tr>	
-	</table>{{employeeList}}
+	</table>
 	
 	
 </div>

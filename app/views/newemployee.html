@@ -7,7 +7,7 @@ Employee Registrtion</div></h2>
  <select name="company" id="company" ng-model="employee.employee_info.company" ng-options="company.legal_name for company in companiesList"></select> 
 
    <tr><label for="Location"> Location: </label>
-   <select type="text" name="location_id" id="location_id" ng-model="employee.employee_info.location_id"  ng-options="company.id for company in companiesList  "  ng-change=" getLocations(companiesList.id)" required/></select>
+   <select type="text" name="location_id" id="location_id" ng-model="employee.employee_info.location_id"  ng-options="company.id for company in companiesList  "  ng-change=" getLocations(companiesList.id)"  ng-change="locationList(id) " required/></select>
 
     <div><br/>
       <label>First Name:</label>

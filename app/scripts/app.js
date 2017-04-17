@@ -45,12 +45,12 @@
    .state('newemployee', {
         url : '/newemployee', 
         templateUrl: 'views/newemployee.html',
-        controller: 'listCtrl'  
+        controller: 'employeeCtrl'  
     }) 
-    //  .state('list', {
-    //     url : '/newemployee', 
-    //     templateUrl: 'views/newemployee.html',
-    //     controller: 'listCtrl'  
-    // }) 
+     .state('emp_full_detail', {
+        url : '/emp_full_detail/:id', 
+        templateUrl: 'views/emp_full_detail.html',
+        controller: 'showEmpCtrl'  
+    }) 
 
   }]);
