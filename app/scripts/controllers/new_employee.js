@@ -1,8 +1,8 @@
  var app = angular.module('rtxDemoApp');
   app.controller('newemployeeCtrl',['$scope','postemployeesService','employeeService','stateService',
-    'countyService','foodService','felonService','vocrehabService','companyService','locationService','$state',
+    'countyService','foodService','felonService','vocrehabService','companyService','locationService','occupationService','$state',
   	function($scope,postemployeesService,employeeService,stateService,countyService,foodService,
-      felonService,vocrehabService,companyService,locationService,$state) {
+      felonService,vocrehabService,companyService,locationService,occupationService,$state) {
        $scope.questionnaire = {};
        $scope.questionnaires = {};
 
@@ -11,12 +11,12 @@
           console.log("gfgfggfg", employee)
              postemployeesService.postEmployees(employee).then(function(empresponse){
                $scope.employeeInformation=empresponse.data
-                 console.log("emplplppl",empresponse.data)
 
+                 console.log("emplplppl",empresponse.data)
                   $state.go("list"); 
              })  
-         };
-         $scope.submitNewEmployee();
+         }
+        $scope.submitNewEmployee();
      
       $scope.getEmployee_info_details=function(){
        employeeService.getEmployees($state.params.id).then(function(employeeResponse){
@@ -86,6 +86,16 @@
        console.log(value)
        }
    
+
+     $scope.get_occupation=function(){
+       occupationService.getOccupation($state.params.id).then(function(occResponse){
+          $scope.occupationData =occResponse.data; 
+          console.log("occResponse",occResponse.data)     
+        })
+      }
+        $scope.get_occupation();
+
+
 
       $scope.questionnaires = function(value){
         console.log("print_value",value)
