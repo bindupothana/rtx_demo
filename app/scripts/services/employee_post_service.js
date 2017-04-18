@@ -2,7 +2,7 @@ var app = angular.module('rtxDemoApp');
 
 app.service('postemployeesService', ['$http',function($http) { 
   return{
-        postEmployees: function(employees) {
+        postEmployees: function(employee) {
            var user_info = JSON.parse(localStorage.getItem('user_info'));
               console.log("employee_user_info",user_info)
            var auth_info = user_info.auth_token;

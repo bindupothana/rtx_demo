@@ -1,27 +1,20 @@
  var app = angular.module('rtxDemoApp');
-  app.controller('newemployeeCtrl',['$scope','employeeService','postemployeesService','stateService','countyService','foodService','felonService','companyService','locationService','$state',
-  	function($scope,employeeService,postemployeesService,stateService,countyService,foodService,felonService,companyService,locationService,$state) {
+  app.controller('newemployeeCtrl',['$scope','postemployeesService','employeeService','stateService',
+    'countyService','foodService','felonService','vocrehabService','companyService','locationService','$state',
+  	function($scope,postemployeesService,employeeService,stateService,countyService,foodService,
+      felonService,vocrehabService,companyService,locationService,$state) {
        $scope.questionnaire = {};
        $scope.questionnaires = {};
 
     
         $scope.submitNewEmployee=function(employee){
-          var obj={            
-           'first_name':employee.employee_info.first_name,            
-            'last_name':employee.employee_info.last_name 
-             }     
-              postemployeesService.postEmployees(obj).then(function(response){ 
-                console.log("employee",response.data)
-                localStorage.setItem('user_info', JSON.stringify(response.data));
-                $scope.saveEmployee =response.data; 
-          console.log("employee _info",response.data)                     
-                 $state.go("list"); 
-                     
-                
-                 
+          console.log("gfgfggfg", employee)
+             postemployeesService.postEmployees(employee).then(function(response){
+                 console.log("emplplppl",response.data) 
+                $state.go("list"); 
         })  
      };
-     $scope.submitNewEmployee();
+     
 
       
 
@@ -72,7 +65,16 @@
            console.log("counties",felonResponse.data)   
          })           
       }
+       
 
+       $scope.get_voc_rehab=function(state_code){
+      console.log("county",state_code)
+        vocrehabService.get_voc_rhab_county_received (state_code).then(function(rehabResponse){
+           $scope.vocrehabList =rehabResponse.data;
+          
+           console.log("counties",rehabResponse.data)   
+         })           
+      }
 
 
 
