@@ -12,8 +12,7 @@ app.service('felonService', ['$http',function($http) {
               return  $http({
                 method: 'GET',
                 url: url_info,
-                
-                headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "X-AUTH-TOKEN": auth_info,"Content-Type": "application/json"},
+                 headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "X-AUTH-TOKEN": auth_info,"Content-Type": "application/json"},
                 responseType: 'json'
                 });
             }

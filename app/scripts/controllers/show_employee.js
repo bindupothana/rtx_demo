@@ -2,9 +2,7 @@
   app.controller('showEmpCtrl',['$scope','employeeService','$state',
   	function($scope,employeeService,$state) {
    
-console.log("states", $state.params.id)
-
-
+     console.log("states", $state.params.id)
 
       $scope.getEmployee_info=function(){
        employeeService.getEmployee($state.params.id).then(function(employeeResponse){

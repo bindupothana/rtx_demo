@@ -86,14 +86,14 @@ Employee Registrtion</div></h2>
                  <input type="text" id="afdc_recipient_info_name"  name=" afdc_recipient_info.name" ng-model="employee.questionnaire.afdc_recipient_info.name" />
                </div>
               <div>
-                 <label for="city"> city: </label>
+                <br><p> <label for="city"> city: </label>
                  <input name="city" id="afdc_recipient_info_city_received" name="afdc_recipient_info_city_received" ng-model="employee.questionnaire.afdc_recipient_info.city_received"></input>
               </div>
-                 <tr><label for="state"> State: </label>
+                 <br><p><label for="state"> State: </label>
                   <select name="afdc_recipient_info_state_received" id="afdc_recipient_info_state_received" ng-model="employee.questionnaire.afdc_recipient_info.state_received" ng-change="get_afdc_counties(employee.questionnaire.afdc_recipient_info.state_received)" >
                      <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
                   </select> 
-                 <tr><label for="county"> County: </label>
+                 <br><p><label for="county"> County: </label>
                   <select name="afdc_recipient_info_county_received" id="afdc_recipient_info_county_received"    ng-model="employee.questionnaire.afdc_recipient_info.county_received" >
                       <option ng-repeat="county in afdcCountiesList" ng-value="county.id">{{county.name}}</option>
 
@@ -112,7 +112,9 @@ Employee Registrtion</div></h2>
                <input type="text"   id="foodstamps_recipient_info_name" name="foodstamps_recipient_info_name" ng-model="employee.questionnaire.foodstamps_recipient_info.name"  /></tr>
                 <br/><p/><tr><label for="city"> city: </label>
               <input name="city" id="foodstamps_recipient_info_city_received" name="foodstamps_recipient_info_city_received" ng-model="employee.questionnaire.foodstamps_recipient_info.city_received"   ></input>
-              <tr><label for="state"> State: </label>
+              <tr>
+              <br/><p/><tr>
+              <label for="state"> State: </label>
               <select name="foodstamps_recipient_info_state_received" id="foodstamps_recipient_info_state_received" ng-model="employee.questionnaire.foodstamps_recipient_info.state_received" ng-change="get_foodstamps_counties(employee.questionnaire.foodstamps_recipient_info.state_received)">
                 <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
 
@@ -160,11 +162,11 @@ Employee Registrtion</div></h2>
       	      <input class="btn btn-danger" name="voc_rehab_info_no_ttw" value="false" id="voc_rehab_info_no_ttw" type="radio" ng-model="employee.questionnaire.voc_rehab_info.ttw" ng-click= "employee.questionnaire.voc_rehab_info.ttw"/> NO
                       <span ng-show="employee.questionnaire.voc_rehab_info.ttw == 'true'"></span>
 
-               <label for="zipcode">   Zip: </label>
+               <br/><p/><label for="zipcode">   Zip: </label>
       	       <input type="search" id="voc_rehab_info_zip" name="voc_rehab_info_zip"  ng-model="employee.questionnaire.voc_rehab_info.zip"   >
-               <label for="city"> city: </label>
+               <br/><p/><label for="city"> city: </label>
       	       <input  id="voc_rehab_info_city" name="voc_rehab_info_city" ng-model="employee.questionnaire.voc_rehab_info.city"   ></input>
-               <label for="state"> State: </label>
+               <br/><p/><label for="state"> State: </label>
       	       <select  id="voc_rehab_info_state" name="voc_rehab_info_state" ng-model="employee.questionnaire.voc_rehab_info.state" ng-change="get_voc_rehab(employee.questionnaire.voc_rehab_info.state)">
                  <option ng-repeat="state in stateList" ng-value="state.code"  >{{state.name}}</option>
                </select> 
@@ -172,14 +174,6 @@ Employee Registrtion</div></h2>
       	     <select name="voc_rehab_info_county" id="voc_rehab_info_county" ng-model="employee.questionnaire.voc_rehab_info.county" >
                     <option ng-repeat="county in vocrehabList" ng-value="county.id">{{county.name}}</option>
   
-
-              
-
-
-
-
-
-
              </select>
       	 </div>
   	</span>
@@ -194,10 +188,10 @@ Employee Registrtion</div></h2>
     <span ng-show="employee.questionnaire.unemployed== 'true'">
   	   <div class="well">
        <div class="well well-sm" > Unemployment Detail</div>
-      <tr><label for="date"> Unemployeed From: </label>
+      <br><p><label for="date"> Unemployeed From: </label>
         <input type="date" id="unemployment_start_date" name="unemployment_start_date" ng-model="employee.questionnaire.unemployment_info.unemployment_start_date" /> 
   	     </td></tr>
-  	   <tr><label for="date">Unemployeed To : </label>
+  	  <br><p><label for="date">Unemployeed To : </label>
   	    <input type="date" id="unemployment_end_date" name="unemployment_end_date" ng-model="employee.questionnaire.unemployment_info.unemployment_end_date" /> 
   	   </td></tr>
     </span>
@@ -219,24 +213,27 @@ Employee Registrtion</div></h2>
                       <input type="date" id="felon_info_release_date" name="felon_info_release_date" ng-model="employee.questionnaire.felon_info.release_date" /> 
                        </td></tr>
                   <div>
-                  Is this a Federal Conviction?
+                 <li> Is this a Federal Conviction?
                     <br>
                     <input name="felon_info_yes_is_federal_conviction" value="true" id="felon_info_yes_is_federal_conviction" type="radio"   ng-model="employee.questionnaire.felon_info.is_federal_conviction" ng-click= "employee.questionnaire.felon_info.is_federal_conviction" />YES
                     <input name="felon_info_no_is_federal_conviction" value="false" id="felon_info_no_is_federal_conviction" type="radio" ng-model="employee.questionnaire.felon_info.is_federal_conviction" ng-click= "employee.questionnaire.felon_info.is_federal_conviction"/> NO
+                    </li>
                 </div>
                 <div>
+                <li>
                    Is this a state Conviction?
                    <br>
                    <input name="felon_info_yes_is_state_conviction" value="true" id="felon_info_yes_is_state_conviction" type="radio"   ng-model="employee.questionnaire.felon_info.is_state_conviction" ng-click= "employee.questionnaire.felon_info.is_state_conviction" />YES
                    <input name="felon_info_no_is_state_conviction" value="false" id="felon_info_no_is_state_conviction" type="radio" ng-model="employee.questionnaire.felon_info.is_state_conviction" ng-click= "employee.questionnaire.felon_info.is_state_conviction"/> NO
+                   </li>
                  </div>
-                <div>Parole officer Name:
+                <br><p><div>Parole officer Name:
                  <input type="text" name="felon_info_parole_officer_name" id="felon_info_parole_officer_name" ng-model="employee.questionnaire.felon_info.parole_officer_name">
                 </div>
-               <div>parole officer Phone Number:
+               <br><p><div>parole officer Phone Number:
                   <input type="num" name="felon_info_parole_officer_phone"  id="felon_info_parole_officer_phone" ng-model="employee.questionnaire.felon_info.parole_officer_phone">
                </div>
-               <tr><label for="state"> State: </label>
+               <br><p><label for="state"> State: </label>
                 <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.questionnaire.felon_info.felony_state" ng-change="get_felon_state(employee.questionnaire.felon_info.felony_state)">
                   <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
                 </select> 
