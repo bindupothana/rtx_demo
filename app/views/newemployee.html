@@ -1,4 +1,4 @@
-<form>
+<form  name="rtxForm"> 
 <h2><div class=" well">
 Employee Registrtion</div></h2>
 
@@ -17,9 +17,12 @@ Employee Registrtion</div></h2>
     <div><br/>
       <label>*First Name:</label>
       <input type = "text" name = "first_name" id="first_name" ng-pattern = "/[a-zA-Z]/" ng-model = "employee.employee_info.first_name"   required />
-      <div ng-messages = "employeeForm.first_name.$error">
+      <div ng-messages = "rtxForm.first_name.$error">
         <div ng-message = "required">*First Name is required</div><br/>
-        <div ng-message = "pattern">*First Name is invalid</div>
+       
+
+
+
       </div>
   </div>
 
@@ -44,8 +47,10 @@ Employee Registrtion</div></h2>
 
   <br>
   <div class="zip-wrap">
-   <label for="zip">*Zip Code</label>
-   <input type="text" ng-pattern="[0-5]*" name="zip" id="zip"  ng-model="employee.employee_info.zip">
+   <label for="zip">*Zip Code:</label>
+   <input type="text" ng-pattern= /^([1-9])([0-9]){5}$/ name="zip" id="zip"  ng-model="employee.employee_info.zip" required />
+    <div ng-messages = "rtxForm.zip.$error">
+    <div ng-message = "required">*5 digits only</div><br/>
   </div>
     
    <tr><label for="city">*city: </label>
@@ -59,13 +64,19 @@ Employee Registrtion</div></h2>
 
 
   <br>
-   <tr><p/><label for="ssn">* SSN: </label>
-   <input type="text" id="ssn" name="ssn" ng-model="employee.employee_info.ssn">
+   <p/><label for="ssn">* SSN: </label>
+      <input type="text" id="ssn" name="ssn" ng-model="employee.employee_info.ssn">
+        <div ng-messages = "rtxForm.ssn.$error">
+        <div ng-message = "required">*9 digits must</div>
+        </div>
+        <br/>
+       
   <tr><label for="dob">* DOB: </label>
   <input type="date" id="date"  name="date" ng-model="employee.employee_info.dob" /> 
-  </td></tr>
-<!-- </div>
- -->
+  <div ng-messages = "rtxForm.first_name.$error">
+        <div ng-message = "required">*DOB between 1991 to 20</div><br/>
+
+
 <p><h5>Have you ever worked before this company?</h5>
   <input name="question_yes_rehire" value="true" id="question_yes_rehire" type="radio" ng-model="employee.employee_info.rehire" ng-click= "questionnaire(employee.employee_info.rehire)" />YES
 
@@ -132,7 +143,8 @@ Employee Registrtion</div></h2>
 
 <div >3.Have you received Supplement Security Income(SSI)at any time within the past 3 months?
      <br/>
-     <input class="btn btn-primary" name="questionnaire_yes_ssi" value="true" id="questionnaire_yes_ssi" type="radio" ng-model="employee.questionnaire.ssi" ng-click= "questionnaires(remployee.questionnaire.ssi)" />YES
+     <input class="btn btn-primary" name="questionnaire_yes_ssi" value="true" id="questionnaire_yes_ssi" type="radio" ng-model="employee.questionnaire.ssi" ng-click= "questionnaires(employee.questionnaire.ssi)" />YES
+
      <input class="btn btn-danger" name="questionnaire_no_ssi" value="false" id="questionnaire_no_ssi" type="radio" ng-model="employee.questionnaire.ssi" ng-click= "questionnaires(employee.questionnaire.ssi)"/> NO
       <span ng-show="employee.questionnaire.ssi == 'true'"></span>
 </div>
