@@ -53,11 +53,7 @@
 	        {{employeeData.employee_info.city}}
 	     </span>
 	 </div>
-	<div>
-	   <span ><h6/>County:
-	     {{employeeData.employee_info.county}}
-	   </span>
-	</div>
+	
 	<div>
 	  <span ><h6/>State:
         {{employeeData.employee_info.state}}
@@ -91,10 +87,6 @@
          {{employeeData.questionnaire.afdc}}
          </li>
         
-	       <br><h6/>  Name: {{employeeData.afdc_recipient_info.name}}
-	         <br><h6/> City: {{employeeData.afdc_recipient_info.city_received}}
-	         <br><h6/>  State: {{employeeData.afdc_recipient_info.state_received}}
-	        <br><h6/>  County: {{employeeData.afdc_recipient_info.county_received}}
         
          </div>
 
@@ -130,10 +122,45 @@
 	 <li>
 	 	{{employeeData.questionnaire.felon}}
 	 	</li>
+
 	 </div>
+     7.Are you or your spouse a member of a Native American Tribe?
+      <div>
+	     <li>
+	 	   {{employeeData.questionnaire.cdib}}
+	 	  </li>
+	 	</div>
+</div>
+</div>
 
-
-
+<div class="well">
+<h4>Job Information</h4>
+<div>
+Occupation ID:
+{{employeeData.hiring_manager_info.occupation_id}}
+	</div>
+	
+	<p/><div>
+		Starting Hourly Wage:
+		${{employeeData.hiring_manager_info.starting_wage}}
+	</div>
+	<p><div>
+		Date Gave Information:
+		{{employeeData.hiring_manager_info.dgi}}
+	</div>
+	<p><div>
+		Date of Job Offer:
+		{{employeeData.hiring_manager_info.dojo}}
+	</div>
+	<p><div>
+		Date of Hire:
+		{{employeeData.hiring_manager_info.doh}}
+	</div>
+	<p><div>
+		Date Started Work:
+		{{employeeData.hiring_manager_info.dsw}}
+	</div>
+</div>
 
  
   
