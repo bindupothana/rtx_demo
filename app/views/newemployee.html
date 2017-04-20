@@ -39,6 +39,10 @@ Employee Registrtion</div></h2>
    <select  ng-model="employee.employee_info.suffix" id="suffix" name="suffix" required>
      <option value="jr">Jr</option>
      <option value="sr">Sr</option>
+     <option value="sr">I</option>
+     <option value="sr">II</option>
+     <option value="sr">III</option>
+     <option value="sr">IV</option>
    </select>
   </div>
 
@@ -78,7 +82,7 @@ Employee Registrtion</div></h2>
   <tr><label for="dob">* DOB: </label>
   <input type="date" id="date"  name="date" ng-model="employee.employee_info.dob" /> 
   <div ng-messages = "rtxForm.first_name.$error">
-        <div ng-message = "required"></div><br/>
+        <div ng-message = "required"></div> DOB between 1990 to 2000<br/>
 
 
 <p><h5>*Have you ever worked before this company?</h5>
@@ -276,7 +280,13 @@ Employee Registrtion</div></h2>
 </div>
 </div>
 </div>
+</div>
+<p>
 
+
+
+<div>
+<br>
 <div class="well">
   <h3>Job Information</h3>
   <br><p><div>*Starting Position:
@@ -301,6 +311,7 @@ Employee Registrtion</div></h2>
                        </td></tr>
 
 
+</div>
 </div>
 
 
