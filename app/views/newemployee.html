@@ -81,7 +81,7 @@ Employee Registrtion</div></h2>
         <div ng-message = "required"></div><br/>
 
 
-<p><h5>Have you ever worked before this company?</h5>
+<p><h5>*Have you ever worked before this company?</h5>
   <input name="question_yes_rehire" value="true" id="question_yes_rehire" type="radio" ng-model="employee.employee_info.rehire" ng-click= "questionnaire(employee.employee_info.rehire)" />YES
 
   <input name="question_no_rehire" value="false" id="quecstion_no_rehire" type="radio" ng-model="employee.employee_info.rehire" ng-click= "questionnaire(employee.employee_info.rehire)"/> NO
@@ -284,19 +284,19 @@ Employee Registrtion</div></h2>
                  <option ng-repeat="hire in occupationData" ng-value="hire.code">{{hire.name}}</option>
                  </select>
                 </div>
-     <br><p><div>Starting Hourly Wage:
+     <br><p><div>*Starting Hourly Wage:
      <input type="Number" name="hiring_manager_info_starting_wage" id="hiring_manager_info_starting_wage"  ng-model="employee.hiring_manager_info.starting_wage"  >
 
-     <br><p><label for="date of birth">Date Gave Information: </label>
+     <br><p><label for="date of birth">*Date Gave Information: </label>
               <input type="date" id="dgi" name="dgi" ng-model="employee.hiring_manager_info.dgi" /> 
-          <br><p><label for="date of birth">Date of Job Offer: </label>
+          <br><p><label for="date of birth">*Date of Job Offer: </label>
                       <input type="date" id="dojo" name="dojo" ng-model="employee.hiring_manager_info.dojo" /> 
                       
-                    <br><p></p><label for="date of birth">Date of Hire: </label>
+                    <br><p></p><label for="date of birth">*Date of Hire: </label>
                       <input type="date" id="doh" name="doh" ng-model="employee.hiring_manager_info.doh" /> 
                        </td></tr>
 
-                       <br><p><label for="date of birth">Date Started Work: </label>
+                       <br><p><label for="date of birth">*Date Started Work: </label>
                       <input type="date" id="dsw" name="dsw" ng-model="employee.hiring_manager_info.dsw" /> 
                        </td></tr>
 
