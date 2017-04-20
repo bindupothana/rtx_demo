@@ -3,6 +3,7 @@
 Employee Registrtion</div></h2>
 
 <div class="well"><td>
+<div style="color: red;" >Mandatory to fill the *(star) fields</div>
 <h4>BASIC EMPLOYEE INFORMATION:</h4>
     <tr><label for="company"> Company: </label>
  <select name="company" id="company" ng-model="employee.employee_info.company_id" ng-change="getlocations(employee.employee_info.company_id)" >
@@ -77,7 +78,7 @@ Employee Registrtion</div></h2>
   <tr><label for="dob">* DOB: </label>
   <input type="date" id="date"  name="date" ng-model="employee.employee_info.dob" /> 
   <div ng-messages = "rtxForm.first_name.$error">
-        <div ng-message = "required">*DOB between 1991 to 2000</div><br/>
+        <div ng-message = "required"></div><br/>
 
 
 <p><h5>Have you ever worked before this company?</h5>
@@ -144,7 +145,7 @@ Employee Registrtion</div></h2>
 </div>
 
 
-<div >3.Have you received Supplement Security Income(SSI)at any time within the past 3 months?
+<div >*3.Have you received Supplement Security Income(SSI)at any time within the past 3 months?
      <br/>
      <input class="btn btn-primary" name="questionnaire_yes_ssi" value="true" id="questionnaire_yes_ssi" type="radio" ng-model="employee.questionnaire.ssi" ng-click= "questionnaires(employee.questionnaire.ssi)" />YES
 
@@ -278,7 +279,7 @@ Employee Registrtion</div></h2>
 
 <div class="well">
   <h3>Job Information</h3>
-  <br><p><div>Starting Position:
+  <br><p><div>*Starting Position:
                  <select type="text" name="hiring_manager_info" id="hiring_manager_info" ng-model="employee.hiring_manager_info.occupation_id" ng-change="get_occupation(employee.hiring_manager_info.occupation_id)" >
                  <option ng-repeat="hire in occupationData" ng-value="hire.code">{{hire.name}}</option>
                  </select>
