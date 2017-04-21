@@ -6,6 +6,12 @@
 	<h2>List of Employees</h2>
 	<span class="clerfix"></span>
 	<hr>
+	<p>
+      <div align="left">Search :</div>
+      <input ng-model="query[queryBy]" />
+     </p>
+       
+    
    <table id="DisplayTable"  class="table table-striped">
 	    <tr>
 	        <th>SNO</th>
@@ -16,7 +22,7 @@
 	        <th>Details</th>
 
 		</tr>
-		<tr ng-repeat="emp in employeeList">
+		<tr ng-repeat="emp in employeeList | filter: query">
 		   <td>{{$index+ 1}}</td>  
 		    <td>{{emp.employee_info.id}}</td>  
 			<td>{{emp.employee_info.first_name}} {{emp.employee_info.last_name}}</td>  

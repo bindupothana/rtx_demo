@@ -100,6 +100,17 @@
       $scope.questionnaires = function(value){
         console.log("print_value",value)
         }
+
+       $scope.isAgency = true;
+      
+ 
+        $scope.voc_rehab_info_is_agency = function () {
+ 
+            $scope.isAgency = true;
+            $scope.isAffairs= false;
+            $scope.isTicket=false
+          }
+ 
     $scope.go_to_new_emp=function(){      
     $state.go("newemployee");
     };

@@ -1,7 +1,8 @@
  var app = angular.module('rtxDemoApp');
   app.controller('listCtrl',['$scope','employeeService','$state',
   	function($scope,employeeService,$state) {
-   
+        $scope.query = {}
+        $scope.queryBy = '$'
       $scope.getEmployees=function(){
        employeeService.getEmployees().then(function(employeeResponse){
           $scope.employeeList =employeeResponse.data.list; 
