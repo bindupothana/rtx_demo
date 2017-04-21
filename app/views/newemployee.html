@@ -29,7 +29,7 @@ Employee Registrtion</div></h2>
     <div><br/>
       <label>*Last Name:</label>
       <input type = "text" name = "last_name" id="last_name" ng-pattern = "/[a-zA-Z]/" ng-model = "employee.employee_info.last_name"   required />
-      <div ng-messages = "rtxForm.last_name.$error">
+        <div ng-messages = "rtxForm.last_name.$error">
         <div ng-message = "required">*Last Name is required</div><br/>
        
       </div>
@@ -39,50 +39,68 @@ Employee Registrtion</div></h2>
    <select  ng-model="employee.employee_info.suffix" id="suffix" name="suffix" required>
      <option value="jr">Jr</option>
      <option value="sr">Sr</option>
-     <option value="sr">I</option>
-     <option value="sr">II</option>
-     <option value="sr">III</option>
-     <option value="sr">IV</option>
+     <option value="I">I</option>
+     <option value="II">II</option>
+     <option value="III">III</option>
+     <option value="IV">IV</option>
    </select>
+
   </div>
 
   <br>
    <tr><label for="Address1"> *Address1: </label>
    <input type="text" id= "address_line_1" name="address_line_1" ng-model="employee.employee_info.address_line_1" required>
+    <div ng-messages = "rtxForm.address_line_1.$error">
+        <div ng-message = "required">*Address 1 is required</div><br/>
+       
+     
    <tr><label for="Address2"> Address2: </label>
    <input type="text" id=" address_line_2" name="address_line_2" ng-model="employee.employee_info.address_line_2" >
  </br>
 
-  <br>
-  <div >
-   <label for="zip">*Zip Code:</label>
-   <input type="text" id="zip"  name="zip"   ng-model="employee.employee_info.zip" required />
-    <div ng-messages = "rtxForm.zip.$error">
-    <div ng-message = "required">*5 digits only</div><br/>
-  </div>
+
+<br>
+<div>
+<label for="txtZipcode">*Zip Code<span class="required"></span></label></td>
+      <td><input type="number" id="txtZipcode" name="txtZipcode" ng-model="employee.employee_info.zip" maxlength="5"
+            placeholder="enter a 5-digit code"
+             pattern="^\d{5}$"  required />
+</div>
+
     
    <tr><label for="city">*city: </label>
-   <input name="city" id="city" name="city" ng-model="employee.employee_info.city"   required></input>
+   <input name="city" id="city" name="city" ng-model="employee.employee_info.city"   required>
+      <div ng-messages = "rtxForm.city.$error">
+        <div ng-message = "required">*City is required</div><br/>
+        </div>
+       
+   </input>
 
 
   <tr><label for="state">*State: </label>
   <select name="state" id="state" ng-model="employee.employee_info.state" >
     <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
+    <div ng-messages = "rtxForm.state.$error">
+        <div ng-message = "required">*state isrequired</div><br/>
+        </div>
   </select> 
 
 
   <br>
    <p/><label for="ssn">* SSN: </label>
-      <input type="text" id="ssn" name="ssn" ng-model="employee.employee_info.ssn">
-        <div ng-messages = "rtxForm.ssn.$error">
-        <div ng-message = "required">*9 digits must</div>
+      <input type="text" id="ssn" name="ssn" ng-model="employee.employee_info.ssn" maxlength="9">
+        <div ng-messages = "rtxForm.ssn.$error"></div>
+        <div ng-message = "required">
+        *9 digits must</div>
         </div>
         <br/>
        
   <tr><label for="dob">* DOB: </label>
   <input type="date" id="date"  name="date" ng-model="employee.employee_info.dob" /> 
   <div ng-messages = "rtxForm.first_name.$error">
-        <div ng-message = "required"></div> DOB between 1990 to 2000<br/>
+        <div ng-message = "required"></div >
+        <div style="color: red;">DOB between 1990 to 2000<br/>
+        </div>
 
 
 <p><h5>*Have you ever worked before this company?</h5>
@@ -175,17 +193,23 @@ Employee Registrtion</div></h2>
       	      <br>
       	       <input class="btn btn-primary" name="voc_rehab_info_yes_dept_va" value="true" id="voc_rehab_info_yes_dept_va" type="radio" "  ng-model="employee.voc_rehab_info.dept_va" ng-click= "employee.voc_rehab_info.dept_va" />YES
       	      <input class="btn btn-danger" name="voc_rehab_info_no_dept_va" value="false" id="voc_rehab_info_no_dept_va" type="radio" ng-model="employee.voc_rehab_info.dept_va" ng-click= "employee.voc_rehab_info.dept_va"/> NO
-              <span ng-show="employee.voc_rehab_info.dept_va == 'true'"></span>
+              <span ng-show="employee.voc_rehab_info.dept_va == 'false'"></span>
 
       	      </div>
       	     Received vocational rehabitation services from an Employement Network (Ticket to work program)?
       	      <br>
       	      <input class="btn btn-primary" name="voc_rehab_info_yes_ttw" value="true" id="voc_rehab_info_yes_ttw" type="radio"   ng-model="employee.voc_rehab_info.ttw" ng-click= "employee.voc_rehab_info.ttw" />YES
       	      <input class="btn btn-danger" name="voc_rehab_info_no_ttw" value="false" id="voc_rehab_info_no_ttw" type="radio" ng-model="employee.voc_rehab_info.ttw" ng-click= "employee.voc_rehab_info.ttw"/> NO
-                      <span ng-show="employee.voc_rehab_info.ttw == 'true'"></span>
+                      <span ng-show="employee.voc_rehab_info.ttw == 'false'"></span>
 
-               <br/><p/><label for="zipcode">   Zip: </label>
-      	       <input type="search" id="voc_rehab_info_zip" name="voc_rehab_info_zip"  ng-model="employee.voc_rehab_info.zip"   >
+               <br><p><label for="zipcode">   Zip: </label>
+      	       <input type="number" id="voc_rehab_info_zip" name="voc_rehab_info_zip"  ng-model="employee.voc_rehab_info.zip" maxlength="5"  placeholder="enter a 5-digit code"
+             pattern="^\d{5}$" >
+            </p>
+                 
+
+                 
+
                <br/><p/><label for="city"> city: </label>
       	       <input  id="voc_rehab_info_city" name="voc_rehab_info_city" ng-model="employee.voc_rehab_info.city"   ></input>
                <br/><p/><label for="state"> State: </label>
@@ -253,10 +277,13 @@ Employee Registrtion</div></h2>
                  <input type="text" name="felon_info_parole_officer_name" id="felon_info_parole_officer_name" ng-model="employee.felon_info.parole_officer_name">
                 </div>
                <br><p><div>parole officer Phone Number:
-                  <input type="num" name="felon_info_parole_officer_phone"  id="felon_info_parole_officer_phone" ng-model="employee.felon_info.parole_officer_phone">
+               
+                         <span class='number'></span>
+                  <input type="email" name="felon_info_parole_officer_phone"  id="felon_info_parole_officer_phone" ng-model="employee.felon_info.parole_officer_phone" maxlength="12" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+            custom-directive/>
                </div>
                <br><p><label for="state"> State: </label>
-                <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.felon_info.felony_state" ng-change="get_felon_state(employee.felon_info.felony_state)">
+                <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.felon_info.felony_state" ng-change="get_felon_state(employee.felon_info.felony_state)" >
                   <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>
                 </select> 
 

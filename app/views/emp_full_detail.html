@@ -80,21 +80,49 @@
 <div class="well">
 	<h4>Questionnaire:</h4>
 	<div>
-	<span >
-	 <h5/> 1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?
-	   <div>
-	   <li>
-         {{employeeData.questionnaire.afdc}}
-         </li>
-        
+	 <p> 1.Have you or has anyone living with you received Temporary Assistance to needy Families(TANF)at any time since August5,1997?</p>
+	 {{employeeData.questionnaire.afdc}}
+
+	   
+	  
+	  <div    ng-if="employeeData.questionnaire.afdc == 'true'">
+           
+           	<li>
+         		<p>-> Recipient Name:
+         		{{employeeData.afdc_recipient_info.name}}</p>
+         		<p>-> city:
+         		{{employeeData.afdc_recipient_info.city_received}}</p>
+         		<p>-> State:
+         		{{employeeData.afdc_recipient_info.state_received}}</p>
+         		<p>-> County: 
+         		{{employeeData.afdc_recipient_info.county_received}}</p>
+         	</li>
+       
         
          </div>
 
-	 2.Have you or has anyone living with you received food Stamps (SNAP)at any time during the past 15 months?
+	<p> 2.Have you or has anyone living with you received food Stamps (SNAP)at any time during the past 15 months?</p>
 	 <div>
-	 <li>
+	 
 	 	{{employeeData.questionnaire.food_stamps}}
-	 	</li>
+	 	<div    ng-if="employeeData.questionnaire.food_stamps == 'true'">
+           
+           	<li>
+         		<p> Recipient Name:
+         		{{employeeData.afdc_recipient_info.name}}</p>
+         		<p> city:
+         		{{employeeData.afdc_recipient_info.city_received}}</p>
+         		<p> State:
+         		{{employeeData.afdc_recipient_info.state_received}}</p>
+         		<p>County: 
+         		{{employeeData.afdc_recipient_info.county_received}}</p>
+         	</li>
+       
+        
+         </div>
+	 
+
+
 	 </div>
 
 
@@ -104,11 +132,13 @@
 	 	{{employeeData.questionnaire.ssi}}
 	 	</li>
 	 </div>
-	 4.Have you received any type of vocational rehabitation services within  the past two year?
+	 <p>
+	 4.Have you received any type of vocational rehabitation services within  the past two year?</p>
 	  <div>
-	 <li>
-	 	{{employeeData.questionnaire.voc_rehab}}
-	 	</li>
+	 <li>{{employeeData.questionnaire.voc_rehab}}</li>
+	 <div    ng-if="employeeData.questionnaire.food_stamps == 'true'">
+	 	
+	 </div>
 	 </div>
 
 	 5.Have you been unemployed at any time during the last 12 months?
