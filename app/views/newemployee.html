@@ -92,6 +92,7 @@ Employee Registrtion</div></h2>
         <div ng-messages = "rtxForm.ssn.$error"></div>
         <div ng-message = "required">
         *9 digits must</div>
+        Social Securiy Number
         </div>
         <br/>
        
@@ -237,9 +238,9 @@ Employee Registrtion</div></h2>
       <br><p><label for="date"> Unemployeed From: </label>
         <input type="date" id="unemployment_start_date" name="unemployment_start_date" ng-model="employee.unemployment_info.unemployment_start_date" /> 
   	     </td></tr>
-  	   <tr><label for="date">Unemployeed To : </label>
+  	<p><label for="date">Unemployeed To : </label>
   	    <input type="date" id="unemployment_end_date" name="unemployment_end_date" ng-model="employee.unemployment_info.unemployment_end_date" /> 
-  	   </td></tr>
+  	   </p>
     </span>
 </div>
 </div>
@@ -272,6 +273,7 @@ Employee Registrtion</div></h2>
                    <input name="felon_info_yes_is_state_conviction" value="true" id="felon_info_yes_is_state_conviction" type="radio"   ng-model="employee.felon_info.is_state_conviction" ng-click= "employee.felon_info.is_state_conviction" />YES
                    <input name="felon_info_no_is_state_conviction" value="false" id="felon_info_no_is_state_conviction" type="radio" ng-model="employee.felon_info.is_state_conviction" ng-click= "employee.felon_info.is_state_conviction"/> NO
                    </li>
+
                  </div>
                 <br><p><div>Parole officer Name:
                  <input type="text" name="felon_info_parole_officer_name" id="felon_info_parole_officer_name" ng-model="employee.felon_info.parole_officer_name">
@@ -282,6 +284,7 @@ Employee Registrtion</div></h2>
                   <input type="email" name="felon_info_parole_officer_phone"  id="felon_info_parole_officer_phone" ng-model="employee.felon_info.parole_officer_phone" maxlength="12" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
             custom-directive/>
                </div>
+                <span ng-show="employee.felon_info.is_state_conviction== 'true'">
                <br><p><label for="state"> State: </label>
                 <select name="felon_info_felony_state" id="felon_info_felony_state" ng-model="employee.felon_info.felony_state" ng-change="get_felon_state(employee.felon_info.felony_state)" >
                   <option ng-repeat="state in stateList" ng-value="state.code">{{state.name}}</option>

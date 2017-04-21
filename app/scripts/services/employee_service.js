@@ -25,6 +25,7 @@ app.service('employeeService', ['$http',function($http) {
                 method: 'GET',
                 url: ' https://api-qa.retrotax-aci.com/employees/'+ employee_id,   
                 headers: { "X-API-KEY": "yqvNrVR5Cs6vhLq1ZRPq38GM5OrXJ7C97n4BZCJa", "X-AUTH-TOKEN": auth_info,"Content-Type": "application/json"},
+                
                 responseType: 'json'
                 });
          }
