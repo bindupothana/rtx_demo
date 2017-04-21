@@ -109,13 +109,13 @@
            
            	<li>
          		<p> Recipient Name:
-         		{{employeeData.afdc_recipient_info.name}}</p>
+         		{{employeeData.foodstamps_recipient_info.name}}</p>
          		<p> city:
-         		{{employeeData.afdc_recipient_info.city_received}}</p>
+         		{{employeeData.foodstamps_recipient_info.city_received}}</p>
          		<p> State:
-         		{{employeeData.afdc_recipient_info.state_received}}</p>
+         		{{employeeData.foodstamps_recipient_info.state_received}}</p>
          		<p>County: 
-         		{{employeeData.afdc_recipient_info.county_received}}</p>
+         		{{employeeData.foodstamps_recipient_info.county_received}}</p>
          	</li>
        
         
@@ -136,22 +136,52 @@
 	 4.Have you received any type of vocational rehabitation services within  the past two year?</p>
 	  <div>
 	 <li>{{employeeData.questionnaire.voc_rehab}}</li>
-	 <div    ng-if="employeeData.questionnaire.food_stamps == 'true'">
-	 	
+	 <div    ng-if="employeeData.questionnaire.voc_rehab == 'true'">
+	  <p>Received vocational rehabitation services from a vocational rehabitation  agency</p>
+	  {{employeeData.voc_rehab_info.is_agency}}
+	<p> Received vocational rehabitation services from departments of veterans affairs</p>
+	{{employeeData.voc_rehab_info.dept_va}}
+	 <p>Received vocational rehabitation services from an Employement Network (Ticket to work program)</p>
+	 	{{employeeData.voc_rehab_info.ttw}}
+
+	 	<p>Zip:</p>
+	 	{{employeeData.voc_rehab_info.zip}}
+	 	<p>City:</p>
+	 	{{employeeData.voc_rehab_info.city}}
+	 	<p>State:</p>
+	 	{{employeeData.voc_rehab_info.state}}
+	 	<p>County:</p>
+	 	{{employeeData.voc_rehab_info.county}}
 	 </div>
 	 </div>
 
 	 5.Have you been unemployed at any time during the last 12 months?
 	  <div>
-	 <li>
+	 
 	 	{{employeeData.questionnaire.unemployed}}
-	 	</li>
+	 	<div    ng-if="employeeData.questionnaire.unemployed == 'true'">
+	 		 <p>Unemployment Detail:</p>
+	 		 <p>Unemployeed From:</p>
+             {{employeeData.unemployment_info.unemployment_start_date}}
+	 		 </p>
+	 		 <p>Unemployeed To :{{employeeData.unemployment_info.unemployment_end_date}} </p>
+	 	</div>
+	 	
 	 </div>
 	 6.Convicted of felony or released from prison in last 12 months?
 	  <div>
-	 <li>
+	 
 	 	{{employeeData.questionnaire.felon}}
-	 	</li>
+	 	<div    ng-if="employeeData.questionnaire.felon == 'true'">
+	 	<p>Conviction Date:{{employeeData.felon_info.conviction_date}} </p>
+	 	<p>Date of Release: {{employeeData.felon_info.release_date}}</p>
+	 	<p>Is this a Federal Conviction: {{employeeData.felon_info.is_federal_conviction}}</p>
+        <p>Is this a state Conviction:{{employeeData.felon_info.is_state_conviction}}</p>
+        <p>Parole officer Name: {{employeeData.felon_info.parole_officer_name}} </p>
+       <p>parole officer Phone Number:{{employeeData.felon_info.parole_officer_phone}}  </p>	
+       <p>State:{{employeeData.felon_info.felony_state}}  </p>
+       <p>County: {{employeeData.felon_info.felony_county}} </p>
+
 
 	 </div>
      7.Are you or your spouse a member of a Native American Tribe?
